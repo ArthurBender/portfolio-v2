@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "devicon/devicon.min.css";
 
 @theme {
   --color-primary: #004fde;
@@ -13,4 +14,8 @@
 
 .nav-actions > span {
   @apply hover:bg-primary cursor-pointer p-1 px-2 rounded;
+}
+
+.hero-tech-list > i {
+  @apply hover:text-7xl transition-all duration-200;
 }
