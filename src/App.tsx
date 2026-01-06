@@ -1,6 +1,8 @@
+import Navbar from "./components/Navbar"
+
 function App() {
   return (
-    <div className="text-lg text-red-400">Hello world!</div>
+    <Navbar></Navbar>
   )
 }
 

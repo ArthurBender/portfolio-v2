@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #004fde;
+  --color-secondary: #007cf8;
+  --color-dark: #0a06a5;
+  --color-accent: #00a2f6;
+}
+
+.nav-links > a {
+  @apply hover:text-gray-300;
+}
+
+.nav-actions > span {
+  @apply hover:bg-primary cursor-pointer p-1 px-2 rounded;
+}
