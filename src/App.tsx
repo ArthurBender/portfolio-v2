@@ -1,11 +1,13 @@
-import Introduction from "./components/Introduction"
-import Navbar from "./components/Navbar"
+import Introduction from "./sections/Introduction"
+import Navbar from "./sections/Navbar"
+import Skills from "./sections/Skills"
 
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <Introduction></Introduction>
+      <Navbar />
+      <Introduction />
+      <Skills />
     </>
   )
 }
