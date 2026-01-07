@@ -8,6 +8,10 @@
   --color-accent: #00a2f6;
 }
 
+.section {
+  @apply container mx-auto py-10;
+}
+
 .nav-links > a {
   @apply hover:text-gray-300;
 }

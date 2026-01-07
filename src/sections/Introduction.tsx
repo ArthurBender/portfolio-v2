@@ -6,7 +6,7 @@ const Introduction = () => {
       <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover z-[-2]" />
       <div className="absolute inset-0 z-[-1] bg-linear-to-r from-black via-black via-20% to-transparent"></div>
 
-      <div className="flex p-10 gap-4">
+      <div className="flex gap-4 section">
         <div className="flex-1 flex flex-col gap-5 text-white text-center my-auto">
           <h1 className="text-5xl font-bold">Arthur Bender</h1>
           <h3 className="text-2xl">Full Stack Developer</h3>
