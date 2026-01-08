@@ -34,13 +34,16 @@ const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
   }
 
   return (
-    <div className={`flex gap-6 w-fit border border-white text-white rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
-      <div className={handleClasses}>
-        {checkedLabel}
-      </div>
+    <div className="flex flex-col items-center">
+      <h2 className="text-lg text-white">{switchData.name}</h2>
+      <div className={`flex gap-6 w-fit border border-white text-white rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
+        <div className={handleClasses}>
+          {checkedLabel}
+        </div>
 
-      <div className="flex-1">{switchData.options[0].label}</div>
-      <div className="flex-1">{switchData.options[1].label}</div>
+        <div className="flex-1">{switchData.options[0].label}</div>
+        <div className="flex-1">{switchData.options[1].label}</div>
+      </div>
     </div>
   )
 }
