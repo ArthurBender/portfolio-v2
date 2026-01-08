@@ -56,7 +56,6 @@ const Skills = () => {
   } else {
     content = <GraphSkillsView content={skillSwitchValue === "hard" ? skills.hard : skills.soft} />
   }
-  console.log(content);
 
   return (
     <div className="section">
