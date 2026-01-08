@@ -4,11 +4,11 @@ import Skills from "./sections/Skills"
 
 function App() {
   return (
-    <>
+    <div className="bg-background">
       <Navbar />
       <Introduction />
       <Skills />
-    </>
+    </div>
   )
 }
 

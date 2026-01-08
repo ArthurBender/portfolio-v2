@@ -3,11 +3,11 @@ import programmingImg from "../assets/programming.jpg"
 const Introduction = () => {
   return (
     <div className="relative">
-      <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover z-[-2]" />
-      <div className="absolute inset-0 z-[-1] bg-linear-to-r from-black via-black via-20% to-transparent"></div>
+      <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" />
+      <div className="absolute inset-0 bg-linear-to-r from-black via-black via-20% to-transparent"></div>
 
-      <div className="flex gap-4 section">
-        <div className="flex-1 flex flex-col gap-5 text-white text-center my-auto">
+      <div className="flex gap-4 section z-10">
+        <div className="flex-1 flex flex-col gap-5 text-white text-center my-auto z-2">
           <h1 className="text-5xl font-bold">Arthur Bender</h1>
           <h3 className="text-2xl">Full Stack Developer</h3>
 
