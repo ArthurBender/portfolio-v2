@@ -10,7 +10,7 @@
 }
 
 .section {
-  @apply container mx-auto py-10;
+  @apply container mx-auto py-10 px-4;
 }
 
 .nav-links > a {
@@ -23,4 +23,8 @@
 
 .hero-tech-list > i {
   @apply hover:text-7xl transition-all duration-200;
+}
+
+.project-card-links > a {
+  @apply p-1 px-2 rounded-lg text-white flex gap-1 items-center;
 }

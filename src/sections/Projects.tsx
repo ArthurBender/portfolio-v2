@@ -1,72 +1,53 @@
-"use client";
-
 import { useState } from "react";
 import { motion, LayoutGroup } from "framer-motion";
 
-const items = [
-  { id: "one", label: 1 },
-  { id: "two", label: 2 },
-  { id: "three", label: 3 },
-  { id: "four", label: 4 },
-];
+import type { Project } from "../types";
+import ProjectCard from "../components/ProjectCard";
 
-export default function Projects() {
-  const [active, setActive] = useState<string | null>(null);
+import sofiaImg from "../assets/projects/sofia.png";
+import gaImg from "../assets/projects/genetic_algorithm.png";
+
+const projects = [
+  {id: 1, name: "Sofia's Website", link: "https://psi.sofiavarvakis.com", repository: "https://github.com/ArthurBender/sofia-varvakis", description: "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's built using React and Tailwind CSS.", image: sofiaImg, tags: ["react", "tailwindcss"]},
+  {id: 2, name: "Genetic Algorithm", link: "https://ga.arthur-bender.com", repository: "https://github.com/ArthurBender/genetic-algorithm", description: "A basic implementation of a genetic algorithm based on the Shakespeare Monkeys theory. It's done using Rails but the logic is pure JavaScript.", image: gaImg, tags: ["rails", "javascript", "ai"]},
+  {id: 3, name: "Comming soon", todo: true},
+  {id: 4, name: "Comming soon", todo: true},
+] as Project[];
+
+const Projects = () => {
+  const [active, setActive] = useState<number | null>(null);
 
   return (
-    <LayoutGroup>
-      <div className="w-full h-screen p-4">
-        <div
-          className={`
-            grid
-            w-full
-            h-full
-            gap-4
-            ${active === null
-              ? "grid-cols-2 grid-rows-2"
-              : "grid-cols-3 grid-rows-[2fr_1fr]"
-            }
-          `}
-        >
-          {items.map((item) => {
-            const isActive = active === item.id;
+    <div className="section">
+      <LayoutGroup>
+          <div
+            className={`grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}
+          >
+            {projects.map((project) => {
+              const isActive = active === project.id;
+              const isThumbnail = active !== null && !isActive;
 
-            return (
-              <motion.div
-                key={item.id}
-                layout
-                layoutId={`card-${item.id}`}
-                onClick={() =>
-                  setActive(isActive ? null : item.id)
-                }
-                transition={{
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 30,
-                }}
-                className={`
-                  rounded-xl
-                  bg-indigo-500
-                  cursor-pointer
-                  flex
-                  items-center
-                  justify-center
-                  text-white
-                  font-bold
-                  ${active === null
-                    ? "text-3xl"
-                    : isActive
-                    ? "col-span-3 row-start-1 text-5xl"
-                    : "row-start-2 text-2xl"
+              return (
+                <motion.div
+                  key={project.id}
+                  layout
+                  layoutId={`card-${project.id}`}
+                  onClick={() =>
+                    setActive(isActive ? null : project.id)
                   }
-                `}
-              >
-                {item.label}
-              </motion.div>
-            );
-          })}
-        </div>
-      </div>
-    </LayoutGroup>
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className={`rounded-xl cursor-pointer flex items-center justify-center
+                    ${active === null ? "" : isActive ? "col-span-3 row-start-1" : "row-start-2"
+                  }`}
+                >
+                  <ProjectCard project={project} isActive={isActive} isThumbnail={isThumbnail} />
+                </motion.div>
+              );
+            })}
+          </div>
+      </LayoutGroup>
+    </div>
   );
 }
+
+export default Projects;
