@@ -2,6 +2,7 @@ import Introduction from "./sections/Introduction"
 import Navbar from "./sections/Navbar"
 import Projects from "./sections/Projects"
 import Skills from "./sections/Skills"
+import Experience from "./sections/Experience"
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Introduction />
       <Projects />
       <Skills />
+      <Experience />
     </div>
   )
 }

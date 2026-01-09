@@ -16,3 +16,12 @@ export interface Project {
   tags?: string[];
   todo?: boolean;
 }
+
+export interface Experience {
+  id: number;
+  start: number;
+  end?: number;
+  company: string;
+  position: string;
+  description: string;
+}
