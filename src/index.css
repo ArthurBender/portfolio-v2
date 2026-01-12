@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "devicon/devicon.min.css";
 
+@import "react-tooltip/dist/react-tooltip.css";
+
 @theme {
   --color-primary: #004fde;
   --color-secondary: #007cf8;
@@ -27,4 +29,12 @@
 
 .project-card-links > a {
   @apply p-1 px-2 rounded-lg text-white flex gap-1 items-center;
+}
+
+.experience-tooltip {
+  --rt-color-dark: transparent !important;
+}
+
+.experience-tooltip .react-tooltip-arrow {
+  --rt-arrow-size: 0px !important;
 }
