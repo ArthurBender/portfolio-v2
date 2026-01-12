@@ -8,7 +8,7 @@ import dbaImg from "../assets/experiences/dba.jpeg";
 import ifscImg from "../assets/experiences/ifsc.png";
 import fetchlyImg from "../assets/experiences/fetchly.png";
 
-const Experience = () => {
+const Experiences = () => {
   const experiences = [
     {id: 1, start: 2017, end: 2019, company: "DBA Tecnologia", position: "Web Development Intern", description: "Internship in a web development company in Brazil", image: dbaImg},
     {id: 2, start: 2019, end: 2021, company: "DBA Tecnologia", position: "Junior Full-Stack Developer", description: "Junior Full-Stack Developer in a web development company in Brazil", image: dbaImg},
@@ -58,4 +58,4 @@ const Experience = () => {
   )
 }
 
-export default Experience;
+export default Experiences;
