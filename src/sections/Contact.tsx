@@ -1,7 +1,9 @@
+import { useRef } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import type { JSX } from "react";
+import emailjs from "@emailjs/browser";
 
 interface ContactLink {
   id: number;
@@ -12,6 +14,8 @@ interface ContactLink {
 }
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const contacts = [
     {id: 1, address: "linkedin.com/in/arthur-bender", link: "https://linkedin.com/in/arthur-bender", icon: <FaLinkedinIn />, color: "#0a66c2"},
     {id: 2, address: "arthurllbender@gmail.com", link: "mailto:arthurllbender@gmail.com", icon: <SiGmail />, color: "#ea4335"},
@@ -19,9 +23,25 @@ const Contact = () => {
   ] as ContactLink[];
 
   const fieldClasses = "w-full p-2 bg-white rounded-lg text-black";
+  const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!formRef.current) return;
+    if (!emailJsPublicKey) {
+      alert("EmailJS public key not found!");
+      return;
+    }
+
+    emailjs.sendForm(
+      "service_7zyen6g",
+      "template_h1s51ms",
+      formRef.current!,
+      emailJsPublicKey
+    );
+
+    alert("Email sent successfully!");
   }
 
   return (
@@ -36,32 +56,32 @@ const Contact = () => {
           ))}
         </div>
 
-        <form className="border-2 border-white text-white rounded-xl p-4 flex flex-col gap-4" onSubmit={handleSubmit}>
+        <form className="border-2 border-white text-white rounded-xl p-4 flex flex-col gap-4" onSubmit={handleSubmit} ref={formRef}>
           <div className="flex gap-4">
             <div className="flex-1">
               <label htmlFor="firstName">* First Name</label>
-              <input type="text" id="firstName" className={fieldClasses} required />
+              <input type="text" id="firstName" name="firstName" className={fieldClasses} required />
             </div>
 
             <div className="flex-1">
               <label htmlFor="lastName">* Last Name</label>
-              <input type="text" id="lastName" className={fieldClasses} required  />
+              <input type="text" id="lastName" name="lastName" className={fieldClasses} required  />
             </div>
           </div>
 
           <div>
             <label htmlFor="email">* Email</label>
-            <input type="email" id="email" className={fieldClasses} required />
+            <input type="email" id="email" name="email" className={fieldClasses} required />
           </div>
 
           <div>
             <label htmlFor="subject">* Subject</label>
-            <input type="text" id="subject" className={fieldClasses} required />
+            <input type="text" id="subject" name="subject" className={fieldClasses} required />
           </div>
 
           <div>
             <label htmlFor="subject">* Message</label>
-            <textarea rows={4} id="subject" className={fieldClasses} required />
+            <textarea rows={4} id="subject" name="message" className={fieldClasses} required />
           </div>
 
           <button type="submit" className="p-2 bg-primary hover:bg-dark rounded-lg cursor-pointer">Send</button>
