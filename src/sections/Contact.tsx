@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import type { JSX } from "react";
 import emailjs from "@emailjs/browser";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface ContactLink {
   id: number;
@@ -25,6 +26,8 @@ const Contact = () => {
   const fieldClasses = "w-full p-2 bg-white rounded-lg text-black";
   const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+  const [captchaSuccess, setCaptchaSuccess] = useState(false);
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -43,6 +46,12 @@ const Contact = () => {
 
     alert("Email sent successfully!");
   }
+
+  const handleCaptchaChange = (token: string | null) => {
+    if (token) {
+      setCaptchaSuccess(true);
+    }
+  };
 
   return (
     <div className="section">
@@ -84,7 +93,13 @@ const Contact = () => {
             <textarea rows={4} id="subject" name="message" className={fieldClasses} required />
           </div>
 
-          <button type="submit" className="p-2 bg-primary hover:bg-dark rounded-lg cursor-pointer">Send</button>
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+            onChange={handleCaptchaChange}
+            className="mx-auto"
+          />
+
+          <button type="submit" className={`p-2 bg-primary rounded-lg ${!captchaSuccess ? "opacity-50": "hover:bg-dark cursor-pointer"}`} disabled={!captchaSuccess}>Send</button>
         </form>
       </div>
     </div>
