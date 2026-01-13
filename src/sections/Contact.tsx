@@ -96,6 +96,7 @@ const Contact = () => {
           <ReCAPTCHA
             sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
             onChange={handleCaptchaChange}
+            onExpired={() => setCaptchaSuccess(false)}
             className="mx-auto"
           />
 
