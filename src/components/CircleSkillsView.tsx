@@ -18,12 +18,14 @@ const levelColorMap: Record<number, string> = {
 };
 
 const CircleSkillsView = ({ content }: { content: Skill[] }) => {
+  const hasIcons = content.some((skill) => skill.icon);
+
   return (
-    <div className="flex flex-wrap gap-4 justify-center">
+    <div className="flex flex-wrap gap-4 justify-center py-10">
       {content.map((skill) => (
-        <div className="flex-1 flex-col gap-1 text-center">
+        <div key={skill.id} className={`flex-col gap-1 text-center ${hasIcons ? "" : "w-40"}`}>
           <div className="relative w-fit justify-center items-center mx-auto">
-            <CircleProgress value={skill.level} size={80} progressStroke={levelColorMap[skill.level]} />
+            <CircleProgress value={skill.level} size={90} progressStroke={levelColorMap[skill.level]} />
 
             <div className={`absolute inset-0 text-white flex justify-center items-center ${skill.icon && "text-4xl"}`}>
               {skill.icon ? skill.icon : skill.level + "/10"}

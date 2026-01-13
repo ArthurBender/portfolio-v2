@@ -6,6 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 
 import sofiaImg from "../assets/projects/sofia.png";
 import gaImg from "../assets/projects/genetic_algorithm.png";
+import SectionTitle from "../components/SectionTitle";
 
 const projects = [
   {id: 1, name: "Sofia's Website", link: "https://psi.sofiavarvakis.com", repository: "https://github.com/ArthurBender/sofia-varvakis", description: "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's built using React and Tailwind CSS.", image: sofiaImg, tags: ["react", "tailwindcss"]},
@@ -19,6 +20,7 @@ const Projects = () => {
 
   return (
     <div className="section">
+      <SectionTitle title="Projects" description="Some of the projects I've worked on." />
       <LayoutGroup>
           <div
             className={`grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}

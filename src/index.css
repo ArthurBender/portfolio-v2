@@ -11,12 +11,17 @@
   --color-background: #000000;
 }
 
+@font-face {
+  font-family: "Pattaya";
+  src: local("Pattaya"), url(./fonts/Pattaya-Regular.ttf) format("truetype");
+}
+
 .section {
-  @apply container mx-auto py-10 px-4;
+  @apply container mx-auto py-12 px-4;
 }
 
 .nav-links > a {
-  @apply hover:text-gray-300;
+  @apply hover:text-gray-300 transition-all duration-200 border-b-2 border-transparent hover:border-gray-300;
 }
 
 .nav-actions > span {
@@ -24,7 +29,7 @@
 }
 
 .hero-tech-list > i {
-  @apply hover:text-7xl transition-all duration-200;
+  @apply hover:text-8xl transition-all duration-200;
 }
 
 .project-card-links > a {

@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 
 export interface Skill {
+  id: string;
   name: string;
   level: number;
   icon?: JSX.Element;

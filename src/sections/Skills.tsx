@@ -4,6 +4,7 @@ import { AiOutlineRadarChart } from "react-icons/ai";
 import { FaCircleNotch } from "react-icons/fa";
 import CircleSkillsView from "../components/CircleSkillsView";
 import GraphSkillsView from "../components/GraphSkillsView";
+import SectionTitle from "../components/SectionTitle";
 
 const Skills = () => {
   const [skillSwitchValue, setSkillSwitchValue] = useState("hard")
@@ -32,21 +33,21 @@ const Skills = () => {
 
   const skills = {
     "hard": [
-      { name: "Ruby on Rails", level: 9, icon: <i className="devicon-rails-plain colored"></i> },
-      { name: "PostgreSQL", level: 8, icon: <i className="devicon-postgresql-plain colored"></i> },
-      { name: "Docker", level: 7, icon: <i className="devicon-docker-plain colored"></i> },
-      { name: "Linux", level: 6, icon: <i className="devicon-linux-plain"></i> },
-      { name: "React", level: 5, icon: <i className="devicon-react-original colored"></i> },
-      { name: "Python", level: 5, icon: <i className="devicon-python-plain colored"></i> },
-      { name: "Typescript", level: 4, icon: <i className="devicon-typescript-plain colored"></i> },
-      { name: "Redis", level: 4, icon: <i className="devicon-redis-plain colored"></i> },
+      { id: "h-1", name: "Ruby on Rails", level: 9, icon: <i className="devicon-rails-plain colored"></i> },
+      { id: "h-2", name: "PostgreSQL", level: 8, icon: <i className="devicon-postgresql-plain colored"></i> },
+      { id: "h-3", name: "Docker", level: 7, icon: <i className="devicon-docker-plain colored"></i> },
+      { id: "h-4", name: "Linux", level: 6, icon: <i className="devicon-linux-plain"></i> },
+      { id: "h-5", name: "React", level: 5, icon: <i className="devicon-react-original colored"></i> },
+      { id: "h-6", name: "Python", level: 5, icon: <i className="devicon-python-plain colored"></i> },
+      { id: "h-7", name: "Typescript", level: 4, icon: <i className="devicon-typescript-plain colored"></i> },
+      { id: "h-8", name: "Redis", level: 4, icon: <i className="devicon-redis-plain colored"></i> },
     ],
     "soft": [
-      { name: "Problem-solving", level: 9 },
-      { name: "Communication", level: 8 },
-      { name: "Teamwork", level: 8 },
-      { name: "Flexibility", level: 7 },
-      { name: "Leadership", level: 7 }
+      { id: "s-1", name: "Problem-solving", level: 9 },
+      { id: "s-2", name: "Communication", level: 8 },
+      { id: "s-3", name: "Teamwork", level: 8 },
+      { id: "s-4", name: "Flexibility", level: 7 },
+      { id: "s-5", name: "Leadership", level: 7 }
     ]
   }
 
@@ -58,13 +59,19 @@ const Skills = () => {
   }
 
   return (
-    <div className="section">
-      <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} /></div>
-      <div className="flex gap-4">
-        <div className="flex-1 p-10">
-          {content}
+    <div className="section border">
+      <SectionTitle title="My Skills" description="My technical and soft skills." />
+
+      <div className="border-2 border-white rounded-4xl py-4 px-10">
+        <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} /></div>
+        <div className="div w-fit mx-auto relative">
+          <div className={graphSwitchValue === "graph" ? "w-150" : "w-full"}>
+            {content}
+          </div>
+          <div className="absolute -right-20 top-[40%] translate-y-[-50%]">
+            <SkillSwitch switchData={switches[1]} vertical />
+          </div>
         </div>
-        <SkillSwitch switchData={switches[1]} vertical />
       </div>
     </div>
   );

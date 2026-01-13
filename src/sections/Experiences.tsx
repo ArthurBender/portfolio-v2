@@ -7,6 +7,7 @@ import ExperienceTooltipContent from "../components/ExperienceTooltipContent";
 import dbaImg from "../assets/experiences/dba.jpeg";
 import ifscImg from "../assets/experiences/ifsc.png";
 import fetchlyImg from "../assets/experiences/fetchly.png";
+import SectionTitle from "../components/SectionTitle";
 
 const Experiences = () => {
   const experiences = [
@@ -29,7 +30,9 @@ const Experiences = () => {
 
   return (
     <div className="section">
-      <div className="flex gap-2 justify-around relative" id="experiences">
+      <SectionTitle title="Experience" description="Past and current experiences." />
+
+      <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences">
         {experiences.map((experience) => (
           <div key={experience.id} className="text-white flex-1">
             <div className="flex flex-col gap-2 items-center">
@@ -47,10 +50,13 @@ const Experiences = () => {
         <div className="absolute border-b-2 border-white w-full bottom-2"></div>
       </div>
 
+      <p className="text-white w-full text-center italic">Click a year to see more details about the experience.</p>
+
       <Tooltip 
         isOpen={!!activeExperience}
         anchorSelect="#experiences"
         className="experience-tooltip"
+        place="bottom"
       >
         <ExperienceTooltipContent experience={activeExperience} />
       </Tooltip>

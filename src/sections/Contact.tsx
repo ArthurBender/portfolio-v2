@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import type { JSX } from "react";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
+import SectionTitle from "../components/SectionTitle";
 
 interface ContactLink {
   id: number;
@@ -55,8 +56,12 @@ const Contact = () => {
 
   return (
     <div className="section">
-      <div className="grid grid-cols-2 gap-12">
-        <div className="flex flex-col gap-6 items-center py-10">
+      <SectionTitle title="Contact" description="Get in touch with me anytime!" />
+
+      <div className="grid grid-cols-2 gap-12 mt-20">
+        <div className="flex flex-col gap-6 items-start border-2 border-white rounded-xl w-fit h-fit m-auto p-6">
+          <h2 className="text-3xl text-center font-semibold mb-2 text-white">Find me in:</h2>
+
           {contacts.map((contact) => (
             <a href={contact.link} key={contact.id} target="_blank" rel="noreferrer" className="flex gap-4 items-center">
               <span style={{backgroundColor: contact.color}} className="p-1 rounded text-white text-2xl">{contact.icon}</span>
@@ -65,7 +70,9 @@ const Contact = () => {
           ))}
         </div>
 
-        <form className="border-2 border-white text-white rounded-xl p-4 flex flex-col gap-4" onSubmit={handleSubmit} ref={formRef}>
+        <form className="border-2 border-white text-white rounded-xl p-6 flex flex-col gap-4" onSubmit={handleSubmit} ref={formRef}>
+          <h2 className="text-3xl text-center font-semibold mb-2">Send me a message:</h2>
+
           <div className="flex gap-4">
             <div className="flex-1">
               <label htmlFor="firstName">* First Name</label>
