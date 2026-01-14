@@ -10,7 +10,7 @@ type CircleProgressProps = {
 const CircleProgress = ({
   value,
   size = 120,
-  backgroundStroke = "#ffffff",
+  backgroundStroke = "var(--color-text)",
   progressStroke = "var(--color-primary)",
 }: CircleProgressProps) => {
   const strokeWidth = size * 0.1;

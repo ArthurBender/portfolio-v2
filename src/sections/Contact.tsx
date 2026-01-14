@@ -55,15 +55,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="section" id="contact">
+    <div className="section pb-12" id="contact">
       <SectionTitle title="Contact" description="Get in touch with me anytime!" />
 
       <div className="relative">
-        <hr className="hidden lg:block absolute border-2 border-white w-1/2 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] z-0"/>
+        <hr className="hidden lg:block absolute border-2 border-text w-1/2 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] z-0"/>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-20 z-10 relative">
-          <div className="flex flex-col gap-6 items-start border-2 border-white rounded-xl w-fit h-fit m-auto p-6 bg-black">
-            <h2 className="text-3xl text-center font-semibold mb-2 text-white">Find me in:</h2>
+          <div className="flex flex-col gap-6 items-start border-2 border-text rounded-xl w-fit h-fit m-auto p-6 bg-surface">
+            <h2 className="text-3xl text-center font-semibold mb-2 text-text">Find me in:</h2>
 
             {contacts.map((contact) => (
               <a href={contact.link} key={contact.id} target="_blank" rel="noreferrer" className="flex gap-4 items-center">
@@ -73,7 +73,7 @@ const Contact = () => {
             ))}
           </div>
 
-          <form className="border-2 border-white text-white rounded-xl p-6 flex flex-col gap-4 bg-black" onSubmit={handleSubmit} ref={formRef}>
+          <form className="border-2 border-text text-text rounded-xl p-6 flex flex-col gap-4 bg-surface" onSubmit={handleSubmit} ref={formRef}>
             <h2 className="text-3xl text-center font-semibold mb-2">Send me a message:</h2>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -113,7 +113,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <button type="submit" className={`p-2 bg-primary rounded-lg ${!captchaSuccess ? "opacity-50": "hover:bg-dark cursor-pointer"}`} disabled={!captchaSuccess}>Send</button>
+            <button type="submit" className={`p-2 bg-primary text-background rounded-lg ${!captchaSuccess ? "opacity-50": "hover:bg-accent cursor-pointer"}`} disabled={!captchaSuccess}>Send</button>
           </form>
         </div>
       </div>

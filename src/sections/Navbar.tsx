@@ -3,9 +3,12 @@ import { MdOutlineLightMode, MdMenu, MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const toggleTheme = () => {
+    document.documentElement.classList.toggle("dark");
+  };
 
   return (
-    <nav className="w-full bg-dark text-white px-4 py-2 shadow-lg shadow-black/80 relative z-20">
+    <nav className="w-full bg-background text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed">
       <div className="flex items-center justify-between">
         <a
           href="#"
@@ -28,10 +31,10 @@ const Navbar = () => {
             absolute md:static left-0 right-0 top-full
             md:flex md:items-center md:gap-12
             md:flex-1 md:justify-between md:-ml-20
-            bg-dark md:bg-transparent
-            transition-all duration-300 overflow-hidden
+            bg-background md:bg-transparent
+            transition-transform duration-300 overflow-hidden
             ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:opacity-100"}
-            md:max-h-none shadow-lg shadow-black/80 md:shadow-none
+            md:max-h-none shadow-lg shadow-dark/80 md:shadow-none
           `}
         >
           <div></div>
@@ -44,7 +47,7 @@ const Navbar = () => {
 
           <div className="flex gap-4 text-2xl items-center px-4 pb-4 md:p-0 nav-actions justify-end">
             <span>🇧🇷</span>
-            <MdOutlineLightMode className="cursor-pointer" />
+            <MdOutlineLightMode className="cursor-pointer text-4xl" onClick={toggleTheme} />
           </div>
         </div>
       </div>

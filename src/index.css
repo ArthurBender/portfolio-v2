@@ -3,12 +3,37 @@
 
 @import "react-tooltip/dist/react-tooltip.css";
 
+:root {
+  --background: #FAF7F2;
+  --surface: #F1ECE4;
+  --primary: #004fde;
+  --accent: #00a2f6;
+  --text: #000000; /* TO BE CHANGED */
+  --light: #ffffff; /* TO BE CHANGED */
+  --dark: #000000; /* TO BE CHANGED */
+  --shadow: #969696; /* TO BE CHANGED */
+}
+
+.dark {
+  --background: #0F172A;
+  --surface: #182644;
+  --primary: #ffffff; /*TO BE CHANGED */
+  --accent: #ccf0ff; /*TO BE CHANGED */
+  --text: #ffffff; /*TO BE CHANGED */
+  --light: #ffffff; /* TO BE CHANGED */
+  --dark: #000000; /* TO BE CHANGED */
+  --shadow: #000000; /* TO BE CHANGED */
+}
+
 @theme {
-  --color-primary: #004fde;
-  --color-secondary: #007cf8;
-  --color-dark: #0a06a5;
-  --color-accent: #00a2f6;
-  --color-background: #000000;
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-text: var(--text);
+  --color-light: var(--light);
+  --color-dark: var(--dark);
+  --color-shadow: var(--shadow);
 }
 
 @font-face {
@@ -21,15 +46,15 @@ html {
 }
 
 .section {
-  @apply container mx-auto py-5 md:py-12 px-4;
+  @apply container mx-auto pt-20 md:pt-24 px-4;
 }
 
 .nav-links > a {
-  @apply hover:text-gray-300 transition-all duration-200 border-b-2 border-transparent hover:border-gray-300 w-1/2 md:w-auto text-center;
+  @apply hover:text-accent transition-all duration-200 border-b-2 border-transparent hover:border-accent w-1/2 md:w-auto text-center;
 }
 
-.nav-actions > span {
-  @apply hover:bg-primary cursor-pointer p-1 px-2 rounded;
+.nav-actions > * {
+  @apply hover:bg-surface cursor-pointer p-1 px-2 rounded;
 }
 
 .hero-tech-list > i {
@@ -46,4 +71,8 @@ html {
 
 .experience-tooltip .react-tooltip-arrow {
   --rt-arrow-size: 0px !important;
+}
+
+body * {
+  @apply transition-colors duration-200;
 }

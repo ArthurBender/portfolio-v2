@@ -20,7 +20,7 @@ const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
   const checked = switchData.value === switchData.options[1].value;
   const checkedLabel = checked ? switchData.options[1].label : switchData.options[0].label;
 
-  let handleClasses = "absolute bg-primary text-white rounded-lg transition-all duration-200 flex justify-center items-center";
+  let handleClasses = "absolute bg-primary text-surface rounded-lg transition-all duration-200 flex justify-center items-center";
   if (vertical) {
     handleClasses += " left-1 right-1 h-1/2";
     handleClasses += checked ? " translate-y-full -top-1" : " translate-y-0 top-1"
@@ -35,8 +35,8 @@ const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-lg text-white">{switchData.name}</h2>
-      <div className={`cursor-pointer flex gap-6 w-fit border border-white text-white rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
+      <h2 className="text-lg text-text">{switchData.name}</h2>
+      <div className={`cursor-pointer flex gap-6 w-fit border border-primary text-primary rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
         <div className={handleClasses}>
           {checkedLabel}
         </div>

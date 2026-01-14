@@ -34,11 +34,11 @@ const Experiences = () => {
 
       <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences">
         {experiences.map((experience) => (
-          <div key={experience.id} className="text-white flex-1">
+          <div key={experience.id} className="text-primary flex-1">
             <div className="flex flex-col gap-2 items-center">
               <h2>{experience.start}</h2>
               <span
-                className="cursor-pointer z-1 bg-black text-xl"
+                className="cursor-pointer z-1 bg-background text-xl"
                 onClick={() => handleClickExperience(experience)}
               >
                 {activeExperience?.id === experience.id ? <FaRegCircle /> : <FaCircle />}
@@ -47,10 +47,10 @@ const Experiences = () => {
           </div>
         ))}
 
-        <div className="absolute border-b-2 border-white w-full bottom-2"></div>
+        <div className="absolute border-b-2 border-primary w-full bottom-2"></div>
       </div>
 
-      <p className="text-white w-full text-center italic">Click a year to see more details about the experience.</p>
+      <p className="text-text w-full text-center italic">Click a year to see more details about the experience.</p>
 
       <Tooltip 
         isOpen={!!activeExperience}

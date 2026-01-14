@@ -13,7 +13,7 @@ const AngleTick = ({ payload, x, y }: any) => {
       textAnchor="middle"
       dominantBaseline="middle"
       style={{fontSize}}
-      fill="white"
+      fill="var(--color-text)"
     >
       {payload.value}
     </text>
@@ -34,7 +34,7 @@ const GraphSkillsView = ({ content }: { content: Skill[] }) => {
         }}
       >
         <PolarGrid/>
-        <PolarAngleAxis dataKey="name"  tick={<AngleTick />}/>
+        <PolarAngleAxis dataKey="name" tick={<AngleTick />}/>
 
         <PolarRadiusAxis
           domain={[0, 10]}

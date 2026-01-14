@@ -59,10 +59,10 @@ const Skills = () => {
   }
 
   return (
-    <div className="section border" id="skills">
+    <div className="section" id="skills">
       <SectionTitle title="My Skills" description="My technical and soft skills." />
 
-      <div className="border-2 border-white rounded-4xl py-4 px-12 md:px-20 relative">
+      <div className="border-2 border-text bg-surface rounded-4xl py-4 px-12 md:px-20 relative">
         <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} /></div>
         <div className={`w-full mx-auto ${graphSwitchValue === "graph" && "max-w-150"}`}>
           {content}

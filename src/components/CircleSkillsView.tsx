@@ -28,11 +28,11 @@ const CircleSkillsView = ({ content }: { content: Skill[] }) => {
           <div className="relative w-fit justify-center items-center mx-auto">
             <CircleProgress value={skill.level} size={iconSize} progressStroke={levelColorMap[skill.level]} />
 
-            <div className={`absolute inset-0 text-white flex justify-center items-center text-sm md:text-md ${skill.icon && "text-xl md:text-4xl"}`}>
+            <div className={`absolute inset-0 text-text flex justify-center items-center text-sm md:text-md ${skill.icon && "text-xl md:text-4xl"}`}>
               {skill.icon ? skill.icon : skill.level + "/10"}
             </div>
           </div>
-          <div className="text-white text-sm md:text-md">{skill.icon ? skill.level + "/10" : skill.name}</div>
+          <div className="text-text text-sm md:text-md">{skill.icon ? skill.level + "/10" : skill.name}</div>
         </div>
       ))}
     </div>

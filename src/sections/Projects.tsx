@@ -23,7 +23,7 @@ const Projects = () => {
       <SectionTitle title="Projects" description="Some of the projects I've worked on." />
       <LayoutGroup>
           <div
-            className={`mt-20 md:mt-0 grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}
+            className={`mt-10 md:mt-0 grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}
           >
             {projects.map((project) => {
               const isActive = active === project.id;
@@ -38,7 +38,7 @@ const Projects = () => {
                     setActive(isActive ? null : project.id)
                   }
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className={`rounded-xl cursor-pointer flex items-center justify-center
+                  className={`border border-text rounded-xl cursor-pointer flex items-center justify-center
                     ${active === null ? "" : isActive ? "col-span-3 row-start-1" : "row-start-2"
                   }`}
                 >
