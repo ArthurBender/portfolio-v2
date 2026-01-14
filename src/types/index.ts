@@ -24,7 +24,7 @@ export interface Experience {
   start: number;
   end?: number;
   company: string;
-  position: string;
-  description: string;
+  positionKey: string;
+  descriptionKey: string;
   image: string;
 }

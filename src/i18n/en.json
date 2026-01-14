@@ -9,5 +9,21 @@
       "sofia": "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's built using React and Tailwind CSS.",
       "ga": "A basic implementation of a genetic algorithm based on the Shakespeare Monkeys theory. It's done using Rails but the logic is pure JavaScript."
     }
+  },
+
+  "experiences": {
+    "positions": {
+      "student": "Student",
+      "webDevelopmentIntern": "Web Development Intern",
+      "juniorFullStackDeveloper": "Junior Full-Stack Developer",
+      "midLevelFullStackDeveloper": "Mid-Level Full-Stack Developer"
+    },
+    "descriptions": {
+      "dba1": "Internship in a web development company in Brazil",
+      "dba2": "Junior Full-Stack Developer in a web development company in Brazil",
+      "dba3": "Full-Stack Developer in a web development company in Brazil",
+      "ifsc": "Graduation in IT Management with 9.3 average",
+      "fetchly": "Full-Stack Developer in an american company"
+    }
   }
 }
