@@ -5,7 +5,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-dark text-white px-4 py-2 shadow-lg shadow-black/80 relative z-10">
+    <nav className="w-full bg-dark text-white px-4 py-2 shadow-lg shadow-black/80 relative z-20">
       <div className="flex items-center justify-between">
         <a
           href="#"

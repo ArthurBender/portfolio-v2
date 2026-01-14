@@ -58,7 +58,7 @@ const Contact = () => {
     <div className="section" id="contact">
       <SectionTitle title="Contact" description="Get in touch with me anytime!" />
 
-      <div className="grid grid-cols-2 gap-12 mt-20">
+      <div className="grid lg:grid-cols-2 gap-12 mt-20">
         <div className="flex flex-col gap-6 items-start border-2 border-white rounded-xl w-fit h-fit m-auto p-6">
           <h2 className="text-3xl text-center font-semibold mb-2 text-white">Find me in:</h2>
 
