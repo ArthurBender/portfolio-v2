@@ -58,60 +58,64 @@ const Contact = () => {
     <div className="section" id="contact">
       <SectionTitle title="Contact" description="Get in touch with me anytime!" />
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-20">
-        <div className="flex flex-col gap-6 items-start border-2 border-white rounded-xl w-fit h-fit m-auto p-6">
-          <h2 className="text-3xl text-center font-semibold mb-2 text-white">Find me in:</h2>
+      <div className="relative">
+        <hr className="hidden lg:block absolute border-2 border-white w-1/2 left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] z-0"/>
 
-          {contacts.map((contact) => (
-            <a href={contact.link} key={contact.id} target="_blank" rel="noreferrer" className="flex gap-4 items-center">
-              <span style={{backgroundColor: contact.color}} className="p-1 rounded text-white sm:text-2xl">{contact.icon}</span>
-              <span style={{color: contact.color}} className="text-lg">{contact.address}</span>
-            </a>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-20 z-10 relative">
+          <div className="flex flex-col gap-6 items-start border-2 border-white rounded-xl w-fit h-fit m-auto p-6 bg-black">
+            <h2 className="text-3xl text-center font-semibold mb-2 text-white">Find me in:</h2>
+
+            {contacts.map((contact) => (
+              <a href={contact.link} key={contact.id} target="_blank" rel="noreferrer" className="flex gap-4 items-center">
+                <span style={{backgroundColor: contact.color}} className="p-1 rounded text-white sm:text-2xl">{contact.icon}</span>
+                <span style={{color: contact.color}} className="text-lg">{contact.address}</span>
+              </a>
+            ))}
+          </div>
+
+          <form className="border-2 border-white text-white rounded-xl p-6 flex flex-col gap-4 bg-black" onSubmit={handleSubmit} ref={formRef}>
+            <h2 className="text-3xl text-center font-semibold mb-2">Send me a message:</h2>
+
+            <div className="flex flex-col md:flex-row gap-4">
+              <div className="flex-1">
+                <label htmlFor="firstName">* First Name</label>
+                <input type="text" id="firstName" name="firstName" className={fieldClasses} required />
+              </div>
+
+              <div className="flex-1">
+                <label htmlFor="lastName">* Last Name</label>
+                <input type="text" id="lastName" name="lastName" className={fieldClasses} required  />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="email">* Email</label>
+              <input type="email" id="email" name="email" className={fieldClasses} required />
+            </div>
+
+            <div>
+              <label htmlFor="subject">* Subject</label>
+              <input type="text" id="subject" name="subject" className={fieldClasses} required />
+            </div>
+
+            <div>
+              <label htmlFor="subject">* Message</label>
+              <textarea rows={4} id="subject" name="message" className={fieldClasses} required />
+            </div>
+
+            <div className="flex justify-center">
+              <div className="scale-[0.95] sm:scale-100 origin-top">
+                <ReCAPTCHA
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                  onChange={handleCaptchaChange}
+                  onExpired={() => setCaptchaSuccess(false)}
+                />
+              </div>
+            </div>
+
+            <button type="submit" className={`p-2 bg-primary rounded-lg ${!captchaSuccess ? "opacity-50": "hover:bg-dark cursor-pointer"}`} disabled={!captchaSuccess}>Send</button>
+          </form>
         </div>
-
-        <form className="border-2 border-white text-white rounded-xl p-6 flex flex-col gap-4" onSubmit={handleSubmit} ref={formRef}>
-          <h2 className="text-3xl text-center font-semibold mb-2">Send me a message:</h2>
-
-          <div className="flex flex-col md:flex-row gap-4">
-            <div className="flex-1">
-              <label htmlFor="firstName">* First Name</label>
-              <input type="text" id="firstName" name="firstName" className={fieldClasses} required />
-            </div>
-
-            <div className="flex-1">
-              <label htmlFor="lastName">* Last Name</label>
-              <input type="text" id="lastName" name="lastName" className={fieldClasses} required  />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="email">* Email</label>
-            <input type="email" id="email" name="email" className={fieldClasses} required />
-          </div>
-
-          <div>
-            <label htmlFor="subject">* Subject</label>
-            <input type="text" id="subject" name="subject" className={fieldClasses} required />
-          </div>
-
-          <div>
-            <label htmlFor="subject">* Message</label>
-            <textarea rows={4} id="subject" name="message" className={fieldClasses} required />
-          </div>
-
-          <div className="flex justify-center">
-            <div className="scale-[0.95] sm:scale-100 origin-top">
-              <ReCAPTCHA
-                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                onChange={handleCaptchaChange}
-                onExpired={() => setCaptchaSuccess(false)}
-              />
-            </div>
-          </div>
-
-          <button type="submit" className={`p-2 bg-primary rounded-lg ${!captchaSuccess ? "opacity-50": "hover:bg-dark cursor-pointer"}`} disabled={!captchaSuccess}>Send</button>
-        </form>
       </div>
     </div>
   )
