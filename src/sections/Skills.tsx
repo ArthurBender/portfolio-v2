@@ -64,10 +64,8 @@ const Skills = () => {
 
       <div className="border-2 border-white rounded-4xl py-4 px-12 md:px-20 relative">
         <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} /></div>
-        <div className="div w-fit mx-auto">
-          <div className={graphSwitchValue === "graph" ? "w-150" : "w-full"}>
-            {content}
-          </div>
+        <div className={`w-full mx-auto ${graphSwitchValue === "graph" && "max-w-150"}`}>
+          {content}
         </div>
         <div className="absolute right-2 top-[40%] translate-y-[-50%]">
           <SkillSwitch switchData={switches[1]} vertical />

@@ -24,7 +24,7 @@ const CircleSkillsView = ({ content }: { content: Skill[] }) => {
   return (
     <div className="flex flex-wrap gap-4 justify-center py-10">
       {content.map((skill) => (
-        <div key={skill.id} className={`flex-col gap-1 text-center ${hasIcons ? "" : "w-40"}`}>
+        <div key={skill.id} className={`flex-col gap-1 text-center ${hasIcons ? "" : "w-20 text-wrap"}`}>
           <div className="relative w-fit justify-center items-center mx-auto">
             <CircleProgress value={skill.level} size={iconSize} progressStroke={levelColorMap[skill.level]} />
 
