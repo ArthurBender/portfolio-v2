@@ -50,7 +50,7 @@ html {
 }
 
 .nav-links > a {
-  @apply hover:text-accent transition-all duration-200 border-b-2 border-transparent hover:border-accent w-1/2 md:w-auto text-center;
+  @apply hover:text-accent transition-all! border-b-2 border-transparent hover:border-accent w-1/2 md:w-auto text-center;
 }
 
 .nav-actions > * {
@@ -58,7 +58,7 @@ html {
 }
 
 .hero-tech-list > i {
-  @apply hover:text-8xl transition-all duration-200;
+  @apply hover:text-8xl transition-all!;
 }
 
 .project-card-links > a {
