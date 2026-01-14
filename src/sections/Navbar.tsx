@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         <a
           href="#"
-          className="text-3xl hover:text-4xl hover:tracking-wide w-60 h-10 md:h-auto transition-all duration-200"
+          className="text-3xl hover:text-4xl hover:tracking-wide w-60 h-10 md:h-auto transition-transform duration-200"
           style={{ fontFamily: "Pattaya" }}
         >
           Arthur Bender
@@ -32,7 +32,7 @@ const Navbar = () => {
             md:flex md:items-center md:gap-12
             md:flex-1 md:justify-between md:-ml-20
             bg-background md:bg-transparent
-            transition-transform duration-300 overflow-hidden
+            transition-transform duration-200 overflow-hidden
             ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:opacity-100"}
             md:max-h-none shadow-lg shadow-dark/80 md:shadow-none
           `}

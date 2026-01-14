@@ -2,7 +2,7 @@ import programmingImg from "../assets/programming.jpg"
 
 const Introduction = () => {
   return (
-    <div className="relative py-20">
+    <div className="relative pt-20 pb-30 -mb-12">
       <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-linear-to-r from-dark via-dark via-20% to-transparent"></div>
 
