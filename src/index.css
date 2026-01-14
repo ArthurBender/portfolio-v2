@@ -16,6 +16,10 @@
   src: local("Pattaya"), url(./fonts/Pattaya-Regular.ttf) format("truetype");
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .section {
   @apply container mx-auto py-12 px-4;
 }

@@ -29,7 +29,7 @@ const Experiences = () => {
   }
 
   return (
-    <div className="section">
+    <div className="section" id="experiences">
       <SectionTitle title="Experience" description="Past and current experiences." />
 
       <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences">

@@ -19,7 +19,7 @@ const Projects = () => {
   const [active, setActive] = useState<number | null>(null);
 
   return (
-    <div className="section">
+    <div className="section" id="projects">
       <SectionTitle title="Projects" description="Some of the projects I've worked on." />
       <LayoutGroup>
           <div

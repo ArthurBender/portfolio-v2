@@ -59,7 +59,7 @@ const Skills = () => {
   }
 
   return (
-    <div className="section border">
+    <div className="section border" id="skills">
       <SectionTitle title="My Skills" description="My technical and soft skills." />
 
       <div className="border-2 border-white rounded-4xl py-4 px-10">

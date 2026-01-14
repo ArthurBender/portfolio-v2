@@ -55,7 +55,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="section">
+    <div className="section" id="contact">
       <SectionTitle title="Contact" description="Get in touch with me anytime!" />
 
       <div className="grid grid-cols-2 gap-12 mt-20">

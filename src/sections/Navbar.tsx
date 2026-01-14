@@ -6,10 +6,10 @@ const Navbar = () => {
       <a href="#" className="text-3xl hover:text-4xl hover:tracking-wide w-60 transition-all duration-200" style={{ fontFamily: "Pattaya" }}>Arthur Bender</a>
 
       <div className="flex gap-8 nav-links">
-        <a href="#">Skills</a>
-        <a href="#">Experience</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experiences">Experience</a>
+        <a href="#contact">Contact</a>
       </div>
 
       <div className="flex gap-1 text-3xl items-center nav-actions">
