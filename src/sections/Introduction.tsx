@@ -7,11 +7,11 @@ const Introduction = () => {
       <div className="absolute inset-0 bg-linear-to-r from-black via-black via-20% to-transparent"></div>
 
       <div className="flex flex-col md:flex-row gap-12 section z-10 relative">
-        <div className="md:flex-1 flex flex-col gap-12 text-white text-center my-auto">
-          <h1 className="text-8xl font-bold">Arthur Bender</h1>
-          <h3 className="text-4xl">Full Stack Developer</h3>
+        <div className="md:flex-1 flex flex-col gap-6 md:gap-12 text-white text-center my-auto">
+          <h1 className="text-5xl md:text-8xl font-bold">Arthur Bender</h1>
+          <h3 className="text-3xl md:text-4xl">Full Stack Developer</h3>
 
-          <div className="flex gap-3 mx-auto text-5xl items-center hero-tech-list h-20 w-75">
+          <div className="flex gap-3 mx-auto text-4xl md:text-5xl items-center hero-tech-list h-20 w-75 justify-center">
             <i className="devicon-rails-plain colored"></i>
             <i className="devicon-react-original colored"></i>
             <i className="devicon-typescript-plain colored"></i>

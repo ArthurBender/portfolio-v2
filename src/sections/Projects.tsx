@@ -23,7 +23,7 @@ const Projects = () => {
       <SectionTitle title="Projects" description="Some of the projects I've worked on." />
       <LayoutGroup>
           <div
-            className={`grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}
+            className={`mt-20 md:mt-0 grid w-full h-full gap-4 ${active === null ? "grid-cols-2 grid-rows-2" : "grid-cols-3 grid-rows-[2fr_1fr]"}`}
           >
             {projects.map((project) => {
               const isActive = active === project.id;
