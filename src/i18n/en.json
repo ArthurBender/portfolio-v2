@@ -1,0 +1,13 @@
+{
+  "projects": {
+    "names": {
+      "sofia": "Sofia's Website",
+      "ga": "Genetic Algorithm",
+      "todo": "Comming soon"
+    },
+    "descriptions": {
+      "sofia": "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's built using React and Tailwind CSS.",
+      "ga": "A basic implementation of a genetic algorithm based on the Shakespeare Monkeys theory. It's done using Rails but the logic is pure JavaScript."
+    }
+  }
+}
