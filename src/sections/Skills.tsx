@@ -62,13 +62,13 @@ const Skills = () => {
     <div className="section border" id="skills">
       <SectionTitle title="My Skills" description="My technical and soft skills." />
 
-      <div className="border-2 border-white rounded-4xl py-4 px-10">
+      <div className="border-2 border-white rounded-4xl py-4 px-20">
         <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} /></div>
         <div className="div w-fit mx-auto relative">
           <div className={graphSwitchValue === "graph" ? "w-150" : "w-full"}>
             {content}
           </div>
-          <div className="absolute -right-20 top-[40%] translate-y-[-50%]">
+          <div className="absolute -right-15 top-[40%] translate-y-[-50%]">
             <SkillSwitch switchData={switches[1]} vertical />
           </div>
         </div>
