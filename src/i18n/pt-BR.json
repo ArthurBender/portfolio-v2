@@ -1,0 +1,105 @@
+{
+  "introduction": {
+    "subtitle": "Desenvolvedor Full Stack",
+    "aboutMe": "Sou um desenvolvedor full stack com mais de 8 anos de experiência na área, apaixonado por tecnologia e desenvolvimento. Gosto muito de aprender e sou uma pessoa comunicativa e positiva, o que facilita o trabalho em equipe.\nTenho conhecimento sólido de Ruby on Rails, tendo trabalhado com o framework por mais de 6 anos. Recentemente, venho atuando em projetos utilizando React, aprimorando minhas habilidades de frontend. Também já utilizei tecnologias como Python, Android, PHP e Docker em diversos projetos.\nMeu objetivo é continuar crescendo profissionalmente, aprendendo novas linguagens e tecnologias ou aprofundando meu conhecimento naquelas que já domino, contribuindo com soluções eficientes e inovadoras para os projetos dos quais participo.",
+    "cvLink": "/cv_pt-BR.pdf",
+    "downloadCvText": "Baixar CV"
+  },
+
+  "projects": {
+    "sectionName": "Projetos",
+    "sectionDescription": "Alguns dos projetos em que trabalhei.",
+
+    "buttons": {
+      "access": "Acessar",
+      "repository": "Repositório"
+    },
+
+    "names": {
+      "sofia": "Site da Sofia",
+      "ga": "Algoritmo Genético",
+      "todo": "Em breve"
+    },
+    "descriptions": {
+      "sofia": "Site profissional desenvolvido para Sofia Varvakis, psicoterapeuta no Brasil. Trata-se de uma landing page focada na apresentação dos serviços e seus benefícios. Possui design responsivo, adaptando-se a diferentes tamanhos de tela e mantendo uma boa experiência do usuário.",
+      "ga": "Implementação básica de um algoritmo genético baseada na teoria dos Macacos de Shakespeare. O projeto foi desenvolvido como estudo para aprendizado de algoritmos genéticos. Foi construído utilizando Rails, mas toda a lógica é feita em JavaScript puro."
+    }
+  },
+
+  "skills": {
+    "sectionName": "Habilidades",
+    "sectionDescription": "Minhas habilidades técnicas e comportamentais.",
+
+    "switches": {
+      "hard": "Técnicas",
+      "soft": "Comportamentais",
+      "skills": "Habilidades",
+      "display": "Exibição"
+    },
+
+    "names": {
+      "rails": "Ruby on Rails",
+      "react": "React",
+      "typescript": "TypeScript",
+      "docker": "Docker",
+      "postgresql": "PostgreSQL",
+      "linux": "Linux",
+      "python": "Python",
+      "redis": "Redis",
+      "googleCloud": "Google Cloud",
+      "vue": "Vue",
+
+      "ownership": "Res\u00ADpon\u00ADsa\u00ADbi\u00ADli\u00ADda\u00ADde",
+      "focus": "Fo\u00ADco",
+      "consistency": "Con\u00ADsis\u00ADtên\u00ADcia",
+      "problemSolving": "Re\u00ADso\u00ADlu\u00ADção de pro\u00ADble\u00ADmas",
+      "communication": "Co\u00ADmu\u00ADni\u00ADca\u00ADção",
+      "teamwork": "Tra\u00ADba\u00ADlho em e\u00ADqui\u00ADpe",
+      "flexibility": "Fle\u00ADxi\u00ADbi\u00ADli\u00ADda\u00ADde",
+      "leadership": "Li\u00ADde\u00ADran\u00ADça"
+    }
+  },
+
+  "experiences": {
+    "sectionName": "Experiência",
+    "sectionDescription": "Experiências profissionais passadas e atuais.",
+
+    "legend": "Clique em um ano para ver mais detalhes sobre a experiência.",
+
+    "positions": {
+      "student": "Estudante",
+      "webDevelopmentIntern": "Estagiário em Desenvolvimento Web",
+      "juniorFullStackDeveloper": "Desenvolvedor Full Stack Júnior",
+      "midLevelFullStackDeveloper": "Desenvolvedor Full Stack Pleno"
+    },
+    "descriptions": {
+      "dba1": "Auxílio no desenvolvimento e manutenção de aplicações web, com foco em scripts de backend e suporte ao frontend. Atuação em soluções integradas ao terminal Linux e apoio na manutenção de sistemas legados. Tecnologias utilizadas incluem Python, PHP, HTML, CSS, JavaScript e ambientes Linux.",
+      "dba2": "Atuação no desenvolvimento e manutenção de aplicações web em ambiente ágil SCRUM, trabalhando tanto em interfaces de usuário quanto em integrações de backend. Participação em integrações com serviços de terceiros e melhorias contínuas de estabilidade e usabilidade. Tecnologias utilizadas incluem Ruby on Rails, HTML, CSS, JavaScript, Bootstrap, Google Maps API e Google Vision API.",
+      "dba3": "Atuação no desenvolvimento e manutenção de aplicações web escaláveis e modulares, contribuindo em funcionalidades de backend, frontend e mobile. Responsável pelo desenvolvimento de APIs, manutenção de containers e interação com bancos de dados, além de suporte a sistemas existentes e novas implementações. Tecnologias utilizadas incluem Ruby on Rails, Python (Flask), Java (Android), Docker, PostgreSQL e Redis.",
+      "ifsc": "Graduação em Gestão de Tecnologia da Informação, com foco em desenvolvimento de software, bancos de dados, redes, análise de sistemas, gestão de projetos e processos, segurança da informação e estratégia empresarial. O curso combinou uma base técnica sólida com disciplinas de gestão, liderança e tomada de decisão, com ênfase em projetos práticos e aplicação no mundo real. Formado com média geral de 9,3.",
+      "fetchly": "Atuação como desenvolvedor e Tech Lead em uma empresa sediada nos Estados Unidos, sendo responsável pelo desenvolvimento e manutenção de aplicações, integração com serviços externos e garantia de comunicação confiável entre backend e frontend. Liderança de decisões técnicas, automação de deploys, implementação de testes e coordenação de equipe e comunicação com clientes. Tecnologias utilizadas incluem Ruby on Rails, React, Vue, REST, GraphQL, PostgreSQL, CI/CD e integrações com Google Shopping, Zoho Books, DocuSign, Airtable e Amazon S3."
+    }
+  },
+
+  "contact": {
+    "sectionName": "Contato",
+    "sectionDescription": "Entre em contato comigo a qualquer momento!",
+
+    "findMe": "Me encontre em",
+
+    "form": {
+      "title": "Envie-me uma mensagem",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "E-mail",
+      "subject": "Assunto",
+      "message": "Mensagem",
+      "send": "Enviar"
+    }
+  },
+
+  "footer": {
+    "text": "Projetado e desenvolvido por Arthur Bender.",
+    "copyright": "Todos os direitos reservados."
+  }
+}

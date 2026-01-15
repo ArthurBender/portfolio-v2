@@ -50,13 +50,13 @@ const SkillSwitch = ({ switchData, value, setValue, vertical }: SkillSwitchProps
   return (
     <div className="flex flex-col items-center">
       <h2 className="text-lg text-text">{t(switchData.nameKey)}</h2>
-      <div className={`cursor-pointer flex gap-6 w-fit border border-primary text-primary rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
+      <div className={`cursor-pointer grid gap-6 w-fit border border-primary text-primary rounded-lg p-2 relative select-none ${vertical ? "grid-rows-2" : "grid-cols-2"}`} onClick={handleClick}>
         <div className={handleClasses}>
           {checkedLabel}
         </div>
 
-        <div className="flex-1">{formatLabel(switchData.options[0])}</div>
-        <div className="flex-1">{formatLabel(switchData.options[1])}</div>
+        <div className="text-center">{formatLabel(switchData.options[0])}</div>
+        <div className="text-center">{formatLabel(switchData.options[1])}</div>
       </div>
     </div>
   )

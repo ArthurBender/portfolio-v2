@@ -35,7 +35,7 @@ const CircleSkillsView = ({ content }: { content: Skill[] }) => {
               {skill.icon ? <i className={skill.icon}></i> : skill.level + "/10"}
             </div>
           </div>
-          <div className="text-text text-sm md:text-md hyphens-manual overflow-hidden w-full max-w-12.5 md:max-w-22.5 lg:max-w-40">{skill.icon ? skill.level + "/10" : t(skill.nameKey)}</div>
+          <div className="text-text text-sm md:text-md hyphens-manual overflow-hidden w-full max-w-12.5 md:max-w-22.5">{skill.icon ? skill.level + "/10" : t(skill.nameKey)}</div>
         </div>
       ))}
     </div>
