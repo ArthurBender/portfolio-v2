@@ -24,7 +24,7 @@ const AngleTick = ({ payload, x, y }: any) => {
 
 const GraphSkillsView = ({ content }: { content: Skill[] }) => {
   return (
-    <ResponsiveContainer width="100%" maxHeight={400} style={{ pointerEvents: 'none' }} aspect={1}>
+    <ResponsiveContainer width="100%" maxHeight={400} minHeight={240} style={{ pointerEvents: 'none' }} aspect={1}>
       <RadarChart
         outerRadius="85%"
         data={content}
