@@ -1,6 +1,8 @@
 import type { Skill } from "../types";
 import CircleProgress from "./CircleProgress";
 
+import { useTranslation } from "react-i18next";
+
 const levelColorMap: Record<number, string> = {
   1: "#ef4444", // red
   2: "#ef4444",
@@ -18,6 +20,8 @@ const levelColorMap: Record<number, string> = {
 };
 
 const CircleSkillsView = ({ content }: { content: Skill[] }) => {
+  const { t } = useTranslation();
+
   const hasIcons = content.some((skill) => skill.icon);
   const iconSize = screen.width < 768 ? 50 : 90;
 
@@ -29,10 +33,10 @@ const CircleSkillsView = ({ content }: { content: Skill[] }) => {
             <CircleProgress value={skill.level} size={iconSize} progressStroke={levelColorMap[skill.level]} />
 
             <div className={`absolute inset-0 text-text flex justify-center items-center text-sm md:text-md ${skill.icon && "text-xl md:text-4xl"}`}>
-              {skill.icon ? skill.icon : skill.level + "/10"}
+              {skill.icon ? <i className={skill.icon}></i> : skill.level + "/10"}
             </div>
           </div>
-          <div className="text-text text-sm md:text-md">{skill.icon ? skill.level + "/10" : skill.name}</div>
+          <div className="text-text text-sm md:text-md">{skill.icon ? skill.level + "/10" : t(skill.nameKey)}</div>
         </div>
       ))}
     </div>

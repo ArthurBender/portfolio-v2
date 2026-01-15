@@ -1,6 +1,3 @@
-import type { JSX } from "react";
-
-
 export interface Project {
   id: number;
   nameKey: string;
@@ -14,9 +11,9 @@ export interface Project {
 
 export interface Skill {
   id: string;
-  name: string;
+  nameKey: string;
   level: number;
-  icon?: JSX.Element;
+  icon?: string;
 }
 
 export interface Experience {
@@ -27,4 +24,13 @@ export interface Experience {
   positionKey: string;
   descriptionKey: string;
   image: string;
+}
+
+export interface SwitchType {
+  name: string;
+  options: {
+    value: string;
+    label: string;
+    labelType: "text" | "icon";
+  }[];
 }

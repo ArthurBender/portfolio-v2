@@ -1,24 +1,34 @@
 import type { JSX } from "react";
+import type { SwitchType } from "../types";
 
-interface SwitchType {
-  name: string;
-  value: string;
-  setValue: (value: string) => void;
-  options: {
-    value: string;
-    label: JSX.Element;
-  }[];
-}
+import { AiOutlineRadarChart } from "react-icons/ai";
+import { FaCircleNotch } from "react-icons/fa";
 
 interface SkillSwitchProps {
   switchData: SwitchType;
+  value: string;
+  setValue: (value: string) => void;
   vertical?: boolean;
 }
 
+const iconMapping: Record<string, JSX.Element> = {
+  "facirclenotch": <FaCircleNotch />,
+  "aioutlineradarchart": <AiOutlineRadarChart />,
+}
 
-const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
-  const checked = switchData.value === switchData.options[1].value;
-  const checkedLabel = checked ? switchData.options[1].label : switchData.options[0].label;
+const SkillSwitch = ({ switchData, value, setValue, vertical }: SkillSwitchProps) => {
+  const formatLabel = (option: { value: string; label: string; labelType: "text" | "icon" }) => {
+    if (option.labelType === "text") {
+      return <span>{option.label}</span>;
+    } else {
+      return <span className="text-2xl">{iconMapping[option.label]}</span>;
+    }
+  }
+
+  const checked = value === switchData.options[1].value;
+  const checkedLabelContent = checked ? switchData.options[1] : switchData.options[0];
+
+  const checkedLabel = formatLabel(checkedLabelContent);
 
   let handleClasses = "absolute bg-primary text-surface rounded-lg transition-all! flex justify-center items-center";
   if (vertical) {
@@ -30,7 +40,7 @@ const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
   }
 
   const handleClick = () => {
-    switchData.setValue(checked ? switchData.options[0].value : switchData.options[1].value);
+    setValue(checked ? switchData.options[0].value : switchData.options[1].value);
   }
 
   return (
@@ -41,8 +51,8 @@ const SkillSwitch = ({ switchData, vertical }: SkillSwitchProps) => {
           {checkedLabel}
         </div>
 
-        <div className="flex-1">{switchData.options[0].label}</div>
-        <div className="flex-1">{switchData.options[1].label}</div>
+        <div className="flex-1">{formatLabel(switchData.options[0])}</div>
+        <div className="flex-1">{formatLabel(switchData.options[1])}</div>
       </div>
     </div>
   )

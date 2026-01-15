@@ -1,10 +1,12 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import type { Skill } from "../types";
 
+import { useTranslation } from "react-i18next";
 
 const AngleTick = ({ payload, x, y }: any) => {
+  const { t } = useTranslation();
+
   const fontSize = Math.max(10, Math.min(16, screen.width / 30));
-  console.log(fontSize)
 
   return (
     <text
@@ -15,7 +17,7 @@ const AngleTick = ({ payload, x, y }: any) => {
       style={{fontSize}}
       fill="var(--color-text)"
     >
-      {payload.value}
+      {t(payload.value)}
     </text>
   )
 };
@@ -34,7 +36,7 @@ const GraphSkillsView = ({ content }: { content: Skill[] }) => {
         }}
       >
         <PolarGrid/>
-        <PolarAngleAxis dataKey="name" tick={<AngleTick />}/>
+        <PolarAngleAxis dataKey="nameKey" tick={<AngleTick />}/>
 
         <PolarRadiusAxis
           domain={[0, 10]}

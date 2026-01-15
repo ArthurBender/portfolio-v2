@@ -25,5 +25,23 @@
       "ifsc": "Graduation in IT Management with 9.3 average",
       "fetchly": "Full-Stack Developer in an american company"
     }
+  },
+
+  "skills": {
+    "names": {
+      "rails": "Ruby on Rails",
+      "react": "React",
+      "typescript": "Typescript",
+      "docker": "Docker",
+      "postgresql": "PostgreSQL",
+      "linux": "Linux",
+      "python": "Python",
+      "redis": "Redis",
+      "problem-solving": "Problem-solving",
+      "communication": "Communication",
+      "teamwork": "Teamwork",
+      "flexibility": "Flexibility",
+      "leadership": "Leadership"
+    }
   }
 }
