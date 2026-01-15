@@ -76,3 +76,7 @@ html {
 body * {
   @apply transition-colors duration-200;
 }
+
+.text-neon-light {
+  text-shadow: 0 0 2px var(--color-light), 0 0 6px var(--color-light), 0 0 12px var(--color-light), 0 0 24px var(--color-light);
+}

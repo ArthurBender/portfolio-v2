@@ -13,7 +13,7 @@ const Introduction = () => {
 
       <div className="flex flex-col md:flex-row gap-12 section z-10 relative">
         <div className="md:flex-1 flex flex-col gap-6 md:gap-12 text-light text-center my-auto">
-          <h1 className="text-5xl md:text-8xl font-bold">Arthur Bender</h1>
+          <h1 className="text-5xl md:text-8xl font-bold text-neon-light">Arthur Bender</h1>
           <h3 className="text-3xl md:text-4xl">{t("introduction.subtitle")}</h3>
 
           <div className="flex gap-3 mx-auto text-4xl md:text-5xl items-center hero-tech-list h-20 w-75 justify-center">
