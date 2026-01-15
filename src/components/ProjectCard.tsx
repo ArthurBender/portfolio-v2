@@ -6,7 +6,6 @@ import toBeAddedImg from "../assets/projects/to_be_added.jpg";
 import { FaArrowPointer } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
-
 interface ProjectCardProps {
   project: Project;
   isActive: boolean;
@@ -43,8 +42,8 @@ const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
                 </div>
 
                 <div className="flex gap-2 project-card-links">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="bg-blue-600 hover:bg-blue-800 border border-blue-800"><FaArrowPointer /> Access</a>
-                  <a href={project.repository} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="bg-gray-700 hover:bg-gray-800 border border-gray-800 text-white"><FaGithub /> Repository</a>
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="bg-blue-600 hover:bg-blue-800 border border-blue-800"><FaArrowPointer /> {t("projects.buttons.access")}</a>
+                  <a href={project.repository} target="_blank" rel="noopener noreferrer" onClick={handleClick} className="bg-gray-700 hover:bg-gray-800 border border-gray-800 text-white"><FaGithub /> {t("projects.buttons.repository")}</a>
                 </div>
               </>
             }
