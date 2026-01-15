@@ -1,8 +1,13 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+
 import { MdOutlineLightMode, MdMenu, MdClose } from "react-icons/md";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
+  const { t } = useTranslation();
+
   const toggleTheme = () => {
     document.documentElement.classList.toggle("dark");
   };
@@ -39,10 +44,10 @@ const Navbar = () => {
         >
           <div></div>
           <div className="flex flex-col md:flex-row gap-6 md:gap-8 px-4 py-4 md:p-0 nav-links items-center">
-            <a href="#projects" onClick={() => setOpen(false)}>Projects</a>
-            <a href="#skills" onClick={() => setOpen(false)}>Skills</a>
-            <a href="#experiences" onClick={() => setOpen(false)}>Experience</a>
-            <a href="#contact" onClick={() => setOpen(false)}>Contact</a>
+            <a href="#projects" onClick={() => setOpen(false)}>{t("projects.sectionName")}</a>
+            <a href="#skills" onClick={() => setOpen(false)}>{t("skills.sectionName")}</a>
+            <a href="#experiences" onClick={() => setOpen(false)}>{t("experiences.sectionName")}</a>
+            <a href="#contact" onClick={() => setOpen(false)}>{t("contact.sectionName")}</a>
           </div>
 
           <div className="flex gap-4 text-2xl items-center px-4 pb-4 md:p-0 nav-actions justify-end">

@@ -1,5 +1,7 @@
 {
   "projects": {
+    "sectionName": "Projects",
+    "sectionDescription": "Some of the projects I've worked on.",
     "names": {
       "sofia": "Sofia's Website",
       "ga": "Genetic Algorithm",
@@ -11,23 +13,9 @@
     }
   },
 
-  "experiences": {
-    "positions": {
-      "student": "Student",
-      "webDevelopmentIntern": "Web Development Intern",
-      "juniorFullStackDeveloper": "Junior Full-Stack Developer",
-      "midLevelFullStackDeveloper": "Mid-Level Full-Stack Developer"
-    },
-    "descriptions": {
-      "dba1": "Internship in a web development company in Brazil",
-      "dba2": "Junior Full-Stack Developer in a web development company in Brazil",
-      "dba3": "Full-Stack Developer in a web development company in Brazil",
-      "ifsc": "Graduation in IT Management with 9.3 average",
-      "fetchly": "Full-Stack Developer in an american company"
-    }
-  },
-
   "skills": {
+    "sectionName": "Skills",
+    "sectionDescription": "My technical and soft skills.",
     "names": {
       "rails": "Ruby on Rails",
       "react": "React",
@@ -43,5 +31,28 @@
       "flexibility": "Flexibility",
       "leadership": "Leadership"
     }
+  },
+
+  "experiences": {
+    "sectionName": "Experience",
+    "sectionDescription": "Past and current experiences.",
+    "positions": {
+      "student": "Student",
+      "webDevelopmentIntern": "Web Development Intern",
+      "juniorFullStackDeveloper": "Junior Full-Stack Developer",
+      "midLevelFullStackDeveloper": "Mid-Level Full-Stack Developer"
+    },
+    "descriptions": {
+      "dba1": "Internship in a web development company in Brazil",
+      "dba2": "Junior Full-Stack Developer in a web development company in Brazil",
+      "dba3": "Full-Stack Developer in a web development company in Brazil",
+      "ifsc": "Graduation in IT Management with 9.3 average",
+      "fetchly": "Full-Stack Developer in an american company"
+    }
+  },
+
+  "contact": {
+    "sectionName": "Contact",
+    "sectionDescription": "Get in touch with me anytime!"
   }
 }
