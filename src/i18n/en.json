@@ -1,6 +1,6 @@
 {
   "introduction": {
-    "subtitle": "Full Stack Developer",
+    "subtitle": "Full-Stack Developer",
     "aboutMe": "I'm a full-stack developer with more than 8 years of experience in the field, passionate about technology and development. I really enjoy learning and I am a lively and positive person, facilitating teamwork.\nI have solid knowledge of Ruby on Rails, having worked with the framework for over 6 years. Recently, I have been working on projects using React, improving my Frontend skills. I have also used technologies such as Python, Android, PHP, and Docker in various projects.\nMy goal is to continue growing professionally, learning new languages and technologies, or deepening my expertise in those I already master, contributing with efficient and innovative solutions to the projects I work on.",
     "cvLink": "/cv_en.pdf",
     "downloadCvText": "Download CV"
@@ -21,8 +21,8 @@
       "todo": "Comming soon"
     },
     "descriptions": {
-      "sofia": "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's built using React and Tailwind CSS.",
-      "ga": "A basic implementation of a genetic algorithm based on the Shakespeare Monkeys theory. It's done using Rails but the logic is pure JavaScript."
+      "sofia": "A professional website I built for Sofia Varvakis, a psychotherapist from Brazil. It's a landing page focused on presenting the service information and benefits. It has a responsive design that adapts to different screen sizes maintaining a good user experience.",
+      "ga": "A basic implementation of a genetic algorithm based on the Shakespeare Monkeys theory. It was built as a study project for learning about genetic algorithms. It's done using Rails but the logic is pure JavaScript."
     }
   },
 
@@ -46,6 +46,12 @@
       "linux": "Linux",
       "python": "Python",
       "redis": "Redis",
+      "googleCloud": "Google Cloud",
+      "vue": "Vue",
+
+      "ownership": "Ow\u00ADner\u00ADship",
+      "focus": "Fo\u00ADcus",
+      "consistency": "Con\u00ADsis\u00ADten\u00ADcy",
       "problemSolving": "Pro\u00ADblem-solving",
       "communication": "Com\u00ADmu\u00ADni\u00ADca\u00ADtion",
       "teamwork": "Team\u00ADwork",
@@ -56,7 +62,7 @@
 
   "experiences": {
     "sectionName": "Experience",
-    "sectionDescription": "Past and current experiences.",
+    "sectionDescription": "Past and current work experience.",
 
     "legend": "Click a year to see more details about the experience.",
 
@@ -67,11 +73,11 @@
       "midLevelFullStackDeveloper": "Mid-Level Full-Stack Developer"
     },
     "descriptions": {
-      "dba1": "Internship in a web development company in Brazil",
-      "dba2": "Junior Full-Stack Developer in a web development company in Brazil",
-      "dba3": "Full-Stack Developer in a web development company in Brazil",
-      "ifsc": "Graduation in IT Management with 9.3 average",
-      "fetchly": "Full-Stack Developer in an american company"
+      "dba1": "Assisted in the development and maintenance of web applications, focusing on backend scripting and frontend support. Worked on solutions integrated with the Linux command line and helped maintain legacy systems. Technologies used include Python, PHP, HTML, CSS, JavaScript, and Linux environments.",
+      "dba2": "Contributed to the development and maintenance of web applications in an agile SCRUM environment, working on both user interfaces and backend integrations. Participated in third-party service integrations and continuous improvements to application stability and usability. Technologies used include Ruby on Rails, HTML, CSS, JavaScript, Bootstrap, Google Maps API, and Google Vision API.",
+      "dba3": "Worked on the development and maintenance of scalable, modular web applications, contributing across backend, frontend, and mobile-related features. Responsible for API development, container maintenance, and database interactions, while supporting existing systems and new implementations. Technologies used include Ruby on Rails, Python (Flask), Java (Android), Docker, PostgreSQL, and Redis.",
+      "ifsc": "Completed an IT Management degree covering software development, databases, networks, systems analysis, project and process management, information security, and business strategy. The program combined strong technical foundations with management, leadership, and decision-making disciplines, emphasizing real-world projects and applied learning. Graduated with an average grade of 9.3, with coursework spanning software engineering, web development, databases, networks, operating systems, project management, and IT governance.",
+      "fetchly": "Worked as both a developer and Tech Lead at a U.S.-based company, responsible for building and maintaining applications, integrating external services, and ensuring reliable API communication between backend and frontend. Led technical decisions, automated deployments, implemented tests, and managed team coordination and client communication. Technologies used include Ruby on Rails, React, Vue, REST, GraphQL, PostgreSQL, CI/CD, and integrations with Google Shopping, Zoho Books, DocuSign, AirTable, and Amazon S3."
     }
   },
 
