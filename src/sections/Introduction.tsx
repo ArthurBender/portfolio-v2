@@ -9,6 +9,7 @@ const Introduction = () => {
     <div className="relative pt-20 pb-30 -mb-12">
       <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" />
       <div className="absolute inset-0 bg-linear-to-r from-dark via-dark via-20% to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-14 bg-background"></div>
 
       <div className="flex flex-col md:flex-row gap-12 section z-10 relative">
         <div className="md:flex-1 flex flex-col gap-6 md:gap-12 text-light text-center my-auto">

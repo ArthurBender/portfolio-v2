@@ -13,7 +13,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-background text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed">
+    <nav className="w-full bg-background/70 text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed backdrop-blur">
       <div className="flex items-center justify-between">
         <a
           href="#"
@@ -36,7 +36,7 @@ const Navbar = () => {
             absolute md:static left-0 right-0 top-full
             md:flex md:items-center md:gap-12
             md:flex-1 md:justify-between md:-ml-20
-            bg-background md:bg-transparent
+            bg-background/97 md:bg-transparent
             transition-[transform,color]! overflow-hidden
             ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:opacity-100"}
             md:max-h-none shadow-lg shadow-dark/80 md:shadow-none
