@@ -2,7 +2,7 @@ import type { Project } from "../types";
 import sofiaImg from "../assets/projects/sofia.png";
 import gaImg from "../assets/projects/genetic_algorithm.png";
 
-export const projects = [
+export const projects: Project[] = [
   {
     id: 1,
     nameKey: "projects.names.sofia",
@@ -31,4 +31,4 @@ export const projects = [
     nameKey: "projects.names.todo",
     todo: true
   },
-] as Project[];
+];

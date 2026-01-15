@@ -25,11 +25,11 @@ const Contact = () => {
 
   const formRef = useRef<HTMLFormElement>(null);
 
-  const contacts = [
+  const contacts: ContactLink[] = [
     {id: 1, address: "linkedin.com/in/arthur-bender", link: "https://linkedin.com/in/arthur-bender", icon: <FaLinkedinIn />, color: "#0a66c2"},
     {id: 2, address: "arthurllbender@gmail.com", link: "mailto:arthurllbender@gmail.com", icon: <SiGmail />, color: "#ea4335"},
     {id: 3, address: "github.com/arthurbender", link: "https://github.com/arthurbender", icon: <FaGithub />, color: "#aaaaaa"},
-  ] as ContactLink[];
+  ];
 
   const fieldClasses = "w-full p-2 bg-white rounded-lg text-black";
   const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;

@@ -4,7 +4,7 @@ import dbaImg from "../assets/experiences/dba.jpeg";
 import ifscImg from "../assets/experiences/ifsc.png";
 import fetchlyImg from "../assets/experiences/fetchly.png";
 
-export const experiences = [
+export const experiences: Experience[] = [
   {
     id: 1,
     start: 2017,
@@ -14,7 +14,6 @@ export const experiences = [
     descriptionKey: "experiences.descriptions.dba1",
     image: dbaImg
   },
-  
   {
     id: 2,
     start: 2019,
@@ -24,7 +23,6 @@ export const experiences = [
     descriptionKey: "experiences.descriptions.dba2",
     image: dbaImg
   },
-  
   {
     id: 3,
     start: 2020,
@@ -34,7 +32,6 @@ export const experiences = [
     descriptionKey: "experiences.descriptions.ifsc",
     image: ifscImg
   },
-  
   {
     id: 4,
     start: 2021,
@@ -44,7 +41,6 @@ export const experiences = [
     descriptionKey: "experiences.descriptions.dba3",
     image: dbaImg
   },
-  
   {
     id: 5,
     start: 2023,
@@ -54,4 +50,4 @@ export const experiences = [
     descriptionKey: "experiences.descriptions.fetchly",
     image: fetchlyImg
 }
-] as Experience[];
+];

@@ -1,6 +1,6 @@
 import type { Skill, SwitchType } from "../types";
 
-export const skills = {
+export const skills: { hard: Skill[], soft: Skill[] } = {
   "hard": [
     { id: "h-1", nameKey: "skills.names.rails", level: 9, icon: "devicon-rails-plain colored" },
     { id: "h-2", nameKey: "skills.names.postgresql", level: 8, icon: "devicon-postgresql-plain colored" },
@@ -18,9 +18,9 @@ export const skills = {
     { id: "s-4", nameKey: "skills.names.flexibility", level: 7 },
     { id: "s-5", nameKey: "skills.names.leadership", level: 7 }
   ]
-} as { hard: Skill[], soft: Skill[] };
+};
 
-export const switches = [
+export const switches: SwitchType[] = [
   {
     nameKey: "skills.switches.skills",
     options: [
@@ -35,4 +35,4 @@ export const switches = [
       {value: "graph", label: "aioutlineradarchart", labelType: "icon"},
     ]
   }
-] as SwitchType[];
+];
