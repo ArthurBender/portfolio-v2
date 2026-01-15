@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 
 import programmingImg from "../assets/programming.jpg"
 
+import { RiFileDownloadLine } from "react-icons/ri";
+
 const Introduction = () => {
   const { t } = useTranslation();
 
@@ -23,6 +25,14 @@ const Introduction = () => {
             <i className="devicon-docker-plain colored"></i>
             <i className="devicon-postgresql-plain colored"></i>
           </div>
+
+          <a 
+            className="bg-background w-fit mx-auto text-primary px-4 py-2 rounded-xl border border-primary font-semibold flex gap-1 items-center"
+            href={t("introduction.cvLink")} target="_blank" rel="noopener noreferrer"
+          >
+            <span className="text-2xl"><RiFileDownloadLine /></span>
+            {t("introduction.downloadCvText")}
+          </a>
         </div>
 
         <div className="md:flex-1 max-w-170 bg-background/70 text-text border border-text shadow-lg p-6 rounded-xl h-fit my-auto">
@@ -32,6 +42,7 @@ const Introduction = () => {
             </p>
           ))}
         </div>
+
       </div>
     </div>
   )

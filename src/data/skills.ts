@@ -12,7 +12,7 @@ export const skills: { hard: Skill[], soft: Skill[] } = {
     { id: "h-8", nameKey: "skills.names.redis", level: 4, icon: "devicon-redis-plain colored" },
   ],
   "soft": [
-    { id: "s-1", nameKey: "skills.names.problem-solving", level: 9 },
+    { id: "s-1", nameKey: "skills.names.problemSolving", level: 9 },
     { id: "s-2", nameKey: "skills.names.communication", level: 8 },
     { id: "s-3", nameKey: "skills.names.teamwork", level: 8 },
     { id: "s-4", nameKey: "skills.names.flexibility", level: 7 },
