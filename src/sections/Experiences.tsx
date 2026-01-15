@@ -27,7 +27,7 @@ const Experiences = () => {
     <div className="section" id="experiences">
       <SectionTitle title={t("experiences.sectionName")} description={t("experiences.sectionDescription")} />
 
-      <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences">
+      <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences-container">
         {experiences.map((experience) => (
           <div key={experience.id} className="text-primary flex-1">
             <div className="flex flex-col gap-2 items-center">
@@ -49,9 +49,11 @@ const Experiences = () => {
 
       <Tooltip 
         isOpen={!!activeExperience}
-        anchorSelect="#experiences"
+        anchorSelect="#experiences-container"
         className="experience-tooltip"
         place="bottom"
+        openOnClick
+        clickable
       >
         <ExperienceTooltipContent experience={activeExperience} />
       </Tooltip>
