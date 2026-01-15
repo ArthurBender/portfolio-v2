@@ -75,6 +75,18 @@
 
   "contact": {
     "sectionName": "Contact",
-    "sectionDescription": "Get in touch with me anytime!"
+    "sectionDescription": "Get in touch with me anytime!",
+
+    "findMe": "Find me on",
+
+    "form": {
+      "title": "Send me a message",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send"
+    }
   }
 }
