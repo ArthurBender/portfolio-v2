@@ -88,5 +88,10 @@
       "message": "Message",
       "send": "Send"
     }
+  },
+
+  "footer": {
+    "text": "Designed and built by Arthur Bender.",
+    "copyright": "All rights reserved."
   }
 }
