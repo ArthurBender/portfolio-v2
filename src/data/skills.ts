@@ -22,14 +22,14 @@ export const skills = {
 
 export const switches = [
   {
-    name: "Skills",
+    nameKey: "skills.switches.skills",
     options: [
-      {value: "hard", label: "HARD", labelType: "text"},
-      {value: "soft", label: "SOFT", labelType: "text"},
+      {value: "hard", label: "skills.switches.hard", labelType: "key"},
+      {value: "soft", label: "skills.switches.soft", labelType: "key"},
     ]
   },
   {
-    name: "Display",
+    nameKey: "skills.switches.display",
     options: [
       {value: "circles", label: "facirclenotch", labelType: "icon"},
       {value: "graph", label: "aioutlineradarchart", labelType: "icon"},

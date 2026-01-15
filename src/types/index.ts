@@ -27,10 +27,10 @@ export interface Experience {
 }
 
 export interface SwitchType {
-  name: string;
+  nameKey: string;
   options: {
     value: string;
     label: string;
-    labelType: "text" | "icon";
+    labelType: "key" | "icon";
   }[];
 }

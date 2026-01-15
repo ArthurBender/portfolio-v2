@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import SkillSwitch from "../components/SkillSwitch";
 import CircleSkillsView from "../components/CircleSkillsView";
@@ -8,6 +9,8 @@ import SectionTitle from "../components/SectionTitle";
 import { skills, switches } from "../data/skills";
 
 const Skills = () => {
+  const { t } = useTranslation();
+
   const [skillSwitchValue, setSkillSwitchValue] = useState("hard")
   const [graphSwitchValue, setGraphSwitchValue] = useState("circles")
 
@@ -20,7 +23,7 @@ const Skills = () => {
 
   return (
     <div className="section" id="skills">
-      <SectionTitle title="My Skills" description="My technical and soft skills." />
+      <SectionTitle title={t("skills.sectionName")} description={t("skills.sectionDescription")} />
 
       <div className="border-2 border-text bg-surface rounded-4xl py-4 px-12 md:px-20 relative">
         <div className="w-fit mx-auto mb-4"><SkillSwitch switchData={switches[0]} value={skillSwitchValue} setValue={setSkillSwitchValue} /></div>

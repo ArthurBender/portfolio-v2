@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 import type { JSX } from "react";
 import type { SwitchType } from "../types";
 
@@ -17,9 +19,11 @@ const iconMapping: Record<string, JSX.Element> = {
 }
 
 const SkillSwitch = ({ switchData, value, setValue, vertical }: SkillSwitchProps) => {
-  const formatLabel = (option: { value: string; label: string; labelType: "text" | "icon" }) => {
-    if (option.labelType === "text") {
-      return <span>{option.label}</span>;
+  const { t } = useTranslation();
+
+  const formatLabel = (option: { value: string; label: string; labelType: "key" | "icon" }) => {
+    if (option.labelType === "key") {
+      return <span className="uppercase">{t(option.label)}</span>;
     } else {
       return <span className="text-2xl">{iconMapping[option.label]}</span>;
     }
@@ -45,7 +49,7 @@ const SkillSwitch = ({ switchData, value, setValue, vertical }: SkillSwitchProps
 
   return (
     <div className="flex flex-col items-center">
-      <h2 className="text-lg text-text">{switchData.name}</h2>
+      <h2 className="text-lg text-text">{t(switchData.nameKey)}</h2>
       <div className={`cursor-pointer flex gap-6 w-fit border border-primary text-primary rounded-lg p-2 relative select-none ${vertical && "flex-col"}`} onClick={handleClick}>
         <div className={handleClasses}>
           {checkedLabel}

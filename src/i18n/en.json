@@ -27,6 +27,14 @@
   "skills": {
     "sectionName": "Skills",
     "sectionDescription": "My technical and soft skills.",
+
+    "switches": {
+      "hard": "Hard",
+      "soft": "Soft",
+      "skills": "Skills",
+      "display": "Display"
+    },
+
     "names": {
       "rails": "Ruby on Rails",
       "react": "React",
