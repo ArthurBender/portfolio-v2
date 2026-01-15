@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import type { Experience } from "../types";
-
 import { experiences } from "../data/experiences";
 
 import { FaCircle, FaRegCircle } from "react-icons/fa";
 import { Tooltip } from 'react-tooltip';
-import ExperienceTooltipContent from "../components/ExperienceTooltipContent";
 
+import ExperienceTooltipContent from "../components/ExperienceTooltipContent";
 import SectionTitle from "../components/SectionTitle";
 
 const Experiences = () => {
-  
+  const { t } = useTranslation();
 
   const [activeExperience, setActiveExperience] = useState<Experience | null>(null);
 
@@ -25,7 +25,7 @@ const Experiences = () => {
 
   return (
     <div className="section" id="experiences">
-      <SectionTitle title="Experience" description="Past and current experiences." />
+      <SectionTitle title={t("experiences.sectionName")} description={t("experiences.sectionDescription")} />
 
       <div className="flex gap-2 justify-around relative mb-20 select-none" id="experiences">
         {experiences.map((experience) => (
@@ -45,7 +45,7 @@ const Experiences = () => {
         <div className="absolute border-b-2 border-primary w-full bottom-2"></div>
       </div>
 
-      <p className="text-text w-full text-center italic">Click a year to see more details about the experience.</p>
+      <p className="text-text w-full text-center italic">{t("experiences.legend")}</p>
 
       <Tooltip 
         isOpen={!!activeExperience}

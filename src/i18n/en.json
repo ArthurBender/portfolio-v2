@@ -55,6 +55,9 @@
   "experiences": {
     "sectionName": "Experience",
     "sectionDescription": "Past and current experiences.",
+
+    "legend": "Click a year to see more details about the experience.",
+
     "positions": {
       "student": "Student",
       "webDevelopmentIntern": "Web Development Intern",
