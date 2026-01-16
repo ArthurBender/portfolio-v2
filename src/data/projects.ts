@@ -1,6 +1,6 @@
 import type { Project } from "../types";
-import sofiaImg from "../assets/projects/sofia.png";
-import gaImg from "../assets/projects/genetic_algorithm.png";
+import sofiaImg from "../assets/projects/sofia.avif";
+import gaImg from "../assets/projects/genetic_algorithm.avif";
 
 export const projects: Project[] = [
   {

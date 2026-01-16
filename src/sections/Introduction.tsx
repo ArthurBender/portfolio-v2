@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import programmingImg from "../assets/programming.jpg"
+import programmingImg from "../assets/programming.avif"
 
 import { RiFileDownloadLine } from "react-icons/ri";
 
@@ -9,7 +9,7 @@ const Introduction = () => {
 
   return (
     <div className="relative pt-20 pb-30 -mb-12">
-      <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" />
+      <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-linear-to-r from-dark via-dark via-20% to-transparent"></div>
       <div className="absolute top-0 left-0 right-0 h-14 bg-background"></div>
 
