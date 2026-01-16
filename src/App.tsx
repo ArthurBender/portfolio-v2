@@ -6,10 +6,14 @@ import Experiences from "./sections/Experiences"
 import Contact from "./sections/Contact"
 import Footer from "./sections/Footer"
 
+import { ToastContainer } from "react-toastify"
+
 function App() {
 
   return (
     <div className="bg-background">
+      <ToastContainer />
+
       <Navbar />
       <Introduction />
       <Projects />

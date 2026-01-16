@@ -1,16 +1,17 @@
-import { useRef, useState } from "react";
+import { useRef, useState, type JSX } from "react";
 import { useTranslation } from "react-i18next";
 
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
-import type { JSX } from "react";
-
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
 import SectionTitle from "../components/SectionTitle";
+
+import { toast } from 'react-toastify';
+import { useTheme } from "../hooks/useTheme";
 
 interface ContactLink {
   id: number;
@@ -23,7 +24,10 @@ interface ContactLink {
 const Contact = () => {
   const { t } = useTranslation();
 
+  const { theme } = useTheme();
+
   const formRef = useRef<HTMLFormElement>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const contacts: ContactLink[] = [
     {id: 1, address: "linkedin.com/in/arthur-bender", link: "https://linkedin.com/in/arthur-bender", icon: <FaLinkedinIn />, color: "#0a66c2"},
@@ -39,7 +43,7 @@ const Contact = () => {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!formRef.current) return;
+    if (!formRef.current || !recaptchaRef.current) return;
     if (!emailJsPublicKey) {
       alert("EmailJS public key not found!");
       return;
@@ -52,7 +56,15 @@ const Contact = () => {
       emailJsPublicKey
     );
 
-    alert("Email sent successfully!");
+    toast.success('Email sent successfully!', {
+      position: "top-center",
+      autoClose: 5000,
+      theme: theme,
+    });
+
+    formRef.current.reset();
+    recaptchaRef.current.reset();
+    setCaptchaSuccess(false);
   }
 
   const handleCaptchaChange = (token: string | null) => {
@@ -113,6 +125,7 @@ const Contact = () => {
             <div className="flex justify-center">
               <div className="scale-[0.95] sm:scale-100 origin-top">
                 <ReCAPTCHA
+                  ref={recaptchaRef}
                   sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                   onChange={handleCaptchaChange}
                   onExpired={() => setCaptchaSuccess(false)}
