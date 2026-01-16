@@ -57,7 +57,6 @@ const Navbar = () => {
               {language === "pt-BR" ? "🇧🇷" : "🇺🇸"}
             </span>
             <span className="cursor-pointer text-2xl" onClick={toggleTheme}>
-              {console.log(theme)}
               {theme === "dark" ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
             </span>
           </div>

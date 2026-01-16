@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const THEME_KEY = "theme";
 export type Theme = "light" | "dark";
