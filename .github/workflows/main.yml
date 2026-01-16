@@ -1,0 +1,25 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKERPASS }}" | docker login -u "${{ secrets.DOCKERUSER }}" --password-stdin
+
+      - name: Build Docker image
+        run: |
+          docker build -t arthurllbender/portfolio-v2:latest .
+
+      - name: Push Docker image
+        run: |
+          docker push arthurllbender/portfolio-v2:latest
