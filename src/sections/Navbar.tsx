@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { MdOutlineLightMode, MdOutlineDarkMode, MdMenu, MdClose } from "react-icons/md";
+import brazilFlag from "../assets/flags/brazil.svg";
+import usaFlag from "../assets/flags/usa.svg";
 
 import { useTheme } from "../hooks/useTheme";
 import { useLanguage } from "../hooks/useLanguage";
@@ -13,6 +15,8 @@ const Navbar = () => {
 
   const { theme, toggleTheme } = useTheme();
   const { language, toggleLanguage } = useLanguage();
+
+  const flag = language === "pt-BR" ? brazilFlag : usaFlag;
 
   return (
     <nav className="w-full bg-background/70 text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed backdrop-blur">
@@ -54,7 +58,7 @@ const Navbar = () => {
 
           <div className="flex gap-4 text-2xl items-center px-4 pb-4 md:p-0 nav-actions justify-end">
             <span className="cursor-pointer" onClick={toggleLanguage}>
-              {language === "pt-BR" ? "🇧🇷" : "🇺🇸"}
+              <img src={flag} alt="Language flag" className="w-8 h-8" />
             </span>
             <span className="cursor-pointer text-2xl" onClick={toggleTheme}>
               {theme === "dark" ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
