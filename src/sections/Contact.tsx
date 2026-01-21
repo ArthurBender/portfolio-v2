@@ -119,7 +119,7 @@ const Contact = () => {
 
             <div>
               <label htmlFor="subject">* {t("contact.form.message")}</label>
-              <textarea rows={4} id="subject" name="message" className={fieldClasses} required />
+              <textarea rows={4} id="message" name="message" className={fieldClasses} required />
             </div>
 
             <div className="flex justify-center">
