@@ -8,21 +8,21 @@
   --surface: #F1ECE4;
   --primary: #004fde;
   --accent: #00a2f6;
-  --text: #000000; /* TO BE CHANGED */
-  --light: #ffffff; /* TO BE CHANGED */
-  --dark: #000000; /* TO BE CHANGED */
-  --shadow: #969696; /* TO BE CHANGED */
+  --text: #2f251e;
+  --light: #fff7ed;
+  --dark: #2a1f18;
+  --shadow: #b7a288;
 }
 
 .dark {
   --background: #0F172A;
   --surface: #182644;
-  --primary: #ffffff; /*TO BE CHANGED */
-  --accent: #ccf0ff; /*TO BE CHANGED */
-  --text: #ffffff; /*TO BE CHANGED */
-  --light: #ffffff; /* TO BE CHANGED */
-  --dark: #000000; /* TO BE CHANGED */
-  --shadow: #000000; /* TO BE CHANGED */
+  --primary: #e7edf7;
+  --accent: #9dd9ff;
+  --text: #e9eff6;
+  --light: #f2f6ff;
+  --dark: #0b111b;
+  --shadow: #0a0f18;
 }
 
 @theme {
