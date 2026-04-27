@@ -18,11 +18,13 @@
     "names": {
       "sofia": "Site da Sofia",
       "ga": "Algoritmo Genético",
+      "menimi": "Menimi",
       "todo": "Em breve"
     },
     "descriptions": {
       "sofia": "Site profissional desenvolvido para Sofia Varvakis, psicoterapeuta no Brasil. Trata-se de uma landing page focada na apresentação dos serviços e seus benefícios. Possui design responsivo, adaptando-se a diferentes tamanhos de tela e mantendo uma boa experiência do usuário.",
-      "ga": "Implementação básica de um algoritmo genético baseada na teoria dos Macacos de Shakespeare. O projeto foi desenvolvido como estudo para aprendizado de algoritmos genéticos. Foi construído utilizando Rails, mas toda a lógica é feita em JavaScript puro."
+      "ga": "Implementação básica de um algoritmo genético baseada na teoria dos Macacos de Shakespeare. O projeto foi desenvolvido como estudo para aprendizado de algoritmos genéticos. Foi construído utilizando Rails, mas toda a lógica é feita em JavaScript puro.",
+      "menimi": "Um projeto pessoal que desenvolvi para praticar minhas habilidades em React e TypeScript. É um aplicativo de lembretes de tarefas com suporte a agendamentos usando RRule e transferência de tarefas não concluídas para os dias seguintes. Também inclui uma mensagem diária de boas-vindas gerada por IA, além de notificações no navegador para os lembretes."
     }
   },
 

@@ -1,6 +1,7 @@
 import type { Project } from "../types";
 import sofiaImg from "../assets/projects/sofia.avif";
 import gaImg from "../assets/projects/genetic_algorithm.avif";
+import menimiImg from "../assets/projects/menimi.avif";
 
 export const projects: Project[] = [
   {
@@ -23,8 +24,12 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    nameKey: "projects.names.todo",
-    todo: true
+    nameKey: "projects.names.menimi",
+    link: "https://menimi.arthur-bender.com",
+    repository: "https://github.com/ArthurBender/menimi-frontend",
+    descriptionKey: "projects.descriptions.menimi",
+    image: menimiImg,
+    tags: ["rails", "react", "tailwindcss", "typescript", "javascript", "ai"]
   },
   {
     id: 4,

@@ -33,7 +33,7 @@ const Projects = () => {
                     setActive(isActive ? null : project.id)
                   }
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className={`border border-text rounded-xl cursor-pointer flex items-center justify-center
+                  className={`border border-text rounded-xl cursor-pointer flex items-center justify-center h-fit
                     ${active === null ? "" : isActive ? "col-span-3 row-start-1" : "row-start-2"
                   }`}
                 >
