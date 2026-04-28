@@ -24,7 +24,7 @@ const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
       <img src={project.image || toBeAddedImg} alt={t(project.nameKey)} className="absolute h-full w-full inset-0 object-cover rounded-xl" loading="lazy" />
 
       {isActive &&
-        <div className="absolute left-0 right-0 bottom-0 bg-dark/70 z-10 rounded-b-xl">
+        <div className="absolute left-0 right-0 bottom-0 bg-dark/70 z-10 rounded-b-xl max-h-[80%] overflow-y-auto">
           <div className="flex flex-col gap-4 p-4">
             <h2 className="text-2xl text-light">{t(project.nameKey)}</h2>
             {!project.todo &&
