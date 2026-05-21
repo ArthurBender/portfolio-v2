@@ -26,10 +26,10 @@ const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
       {isActive &&
         <div className="absolute left-0 right-0 bottom-0 bg-dark/70 z-10 rounded-b-xl max-h-[80%] overflow-y-auto">
           <div className="flex flex-col gap-4 p-4">
-            <h2 className="text-2xl text-light">{t(project.nameKey)}</h2>
+            <h2 className="text-lg md:text-2xl text-light">{t(project.nameKey)}</h2>
             {!project.todo &&
               <>
-                <p className="text-light">{t(project.descriptionKey || "")}</p>
+                <p className="text-light text-sm md:text-base">{t(project.descriptionKey || "")}</p>
 
                 <div className="flex flex-wrap gap-2">
                   {project.tags?.map((tag) => {
