@@ -2,6 +2,7 @@ import type { Project } from "../types";
 import sofiaImg from "../assets/projects/sofia.avif";
 import gaImg from "../assets/projects/genetic_algorithm.avif";
 import menimiImg from "../assets/projects/menimi.avif";
+import devdleImg from "../assets/projects/devdle.avif";
 
 export const projects: Project[] = [
   {
@@ -33,7 +34,11 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    nameKey: "projects.names.todo",
-    todo: true
+    nameKey: "projects.names.devdle",
+    link: "https://devdle.arthur-bender.com",
+    repository: "https://github.com/ArthurBender/devdle-frontend",
+    descriptionKey: "projects.descriptions.devdle",
+    image: devdleImg,
+    tags: ["node", "express", "react", "tailwindcss", "typescript", "javascript", "ai"]
   },
 ];
