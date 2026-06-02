@@ -1,6 +1,7 @@
 import { ToastContainer } from "react-toastify"
 
 import Navbar from "./sections/navbar";
+import Introduction from "./sections/introduction";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <ToastContainer />
       
       <Navbar />
+      <Introduction />
     </div>
   );
 }
