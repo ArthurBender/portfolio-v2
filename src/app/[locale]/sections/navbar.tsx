@@ -1,30 +1,43 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+'use client'
+
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from '@/i18n/navigation';
 
 import { MdOutlineLightMode, MdOutlineDarkMode, MdMenu, MdClose } from "react-icons/md";
-import brazilFlag from "../assets/flags/brazil.svg";
-import usaFlag from "../assets/flags/usa.svg";
 
-import { useTheme } from "../hooks/useTheme";
-import { useLanguage } from "../hooks/useLanguage";
+import { useTheme } from "next-themes";
 
 const Navbar = () => {
-  const { t } = useTranslation();
-
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
 
-  const { theme, toggleTheme } = useTheme();
-  const { language, toggleLanguage } = useLanguage();
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => setMounted(true), []);
 
-  const flag = language === "pt-BR" ? brazilFlag : usaFlag;
+  const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const flag = locale === "pt-BR" ? "/flags/brazil.svg" : "/flags/usa.svg";
+  const themeIcon = mounted
+    ? (theme === "dark" ? <MdOutlineLightMode /> : <MdOutlineDarkMode />)
+    : null;
+
+  const toggleLanguage = () => {
+    router.replace(pathname, { locale: locale === 'en' ? 'pt-BR' : 'en' });
+  };
 
   return (
     <nav className="w-full bg-background/70 text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed backdrop-blur">
       <div className="flex items-center justify-between">
         <a
           href="#"
-          className="text-3xl hover:text-4xl hover:tracking-wide w-60 h-10 md:h-auto transition-all!"
-          style={{ fontFamily: "Pattaya" }}
+          className="text-3xl hover:text-4xl hover:tracking-wide w-60 h-10 md:h-auto transition-all! font-pattaya"
         >
           Arthur Bender
         </a>
@@ -58,10 +71,10 @@ const Navbar = () => {
 
           <div className="flex gap-4 text-2xl items-center px-4 pb-4 md:p-0 nav-actions justify-end">
             <span className="cursor-pointer" onClick={toggleLanguage}>
-              <img src={flag} alt="Language flag" className="w-8 h-8" />
+              <Image src={flag} alt="Language flag" height={0} width={0} className="h-6" style={{ width: "auto" }} />
             </span>
-            <span className="cursor-pointer text-2xl" onClick={toggleTheme}>
-              {theme === "dark" ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
+            <span className="cursor-pointer text-2xl" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+              {themeIcon}
             </span>
           </div>
         </div>
