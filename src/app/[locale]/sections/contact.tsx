@@ -129,7 +129,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="subject">* {t("contact.form.message")}</label>
+              <label htmlFor="message">* {t("contact.form.message")}</label>
               <textarea rows={4} id="message" name="message" className={fieldClasses} required />
             </div>
 
