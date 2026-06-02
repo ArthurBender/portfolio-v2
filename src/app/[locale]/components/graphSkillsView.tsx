@@ -1,9 +1,13 @@
+'use client';
+
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
 import type { Skill } from "../../../types";
 
 import { useTranslations } from 'next-intl';
 
-const AngleTick = ({ payload, x, y }: any) => {
+type AngleTickProps = { payload: { value: string }; x: string | number; y: string | number };
+
+const AngleTick = ({ payload, x, y }: AngleTickProps) => {
   const t = useTranslations();
 
   let fontSize = 16;
@@ -39,7 +43,7 @@ const GraphSkillsView = ({ content }: { content: Skill[] }) => {
         }}
       >
         <PolarGrid/>
-        <PolarAngleAxis dataKey="nameKey" tick={<AngleTick />}/>
+        <PolarAngleAxis dataKey="nameKey" tick={(props: AngleTickProps) => <AngleTick {...props} />}/>
 
         <PolarRadiusAxis
           domain={[0, 10]}

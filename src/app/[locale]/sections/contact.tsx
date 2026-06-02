@@ -43,7 +43,7 @@ const Contact = () => {
 
   const [captchaSuccess, setCaptchaSuccess] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!formRef.current || !recaptchaRef.current) return;
@@ -52,22 +52,30 @@ const Contact = () => {
       return;
     }
 
-    emailjs.sendForm(
-      "service_7zyen6g",
-      "template_h1s51ms",
-      formRef.current!,
-      emailJsPublicKey
-    );
+    try {
+      await emailjs.sendForm(
+        "service_7zyen6g",
+        "template_h1s51ms",
+        formRef.current,
+        emailJsPublicKey
+      );
 
-    toast.success('Email sent successfully!', {
-      position: "top-center",
-      autoClose: 5000,
-      theme: theme,
-    });
+      toast.success('Email sent successfully!', {
+        position: "top-center",
+        autoClose: 5000,
+        theme: theme,
+      });
 
-    formRef.current.reset();
-    recaptchaRef.current.reset();
-    setCaptchaSuccess(false);
+      formRef.current.reset();
+      recaptchaRef.current.reset();
+      setCaptchaSuccess(false);
+    } catch {
+      toast.error('Failed to send email. Please try again.', {
+        position: "top-center",
+        autoClose: 5000,
+        theme: theme,
+      });
+    }
   }
 
   const handleCaptchaChange = (token: string | null) => {
