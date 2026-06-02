@@ -9,7 +9,7 @@ const Introduction = () => {
 
   return (
     <div className="relative pt-20 pb-30 -mb-12">
-      <Image src="/programming.avif" alt="Programming" width={0} height={0} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <Image src="/images/programming.avif" alt="Programming" width={0} height={0} className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
       <div className="absolute inset-0 bg-linear-to-r from-dark via-dark via-20% to-transparent"></div>
       <div className="absolute top-0 left-0 right-0 h-14 bg-background"></div>
 

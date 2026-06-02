@@ -1,15 +1,17 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { routing } from '@/i18n/routing';
+
 import { ThemeProvider } from 'next-themes';
+import '../globals.css';
+
 import localFont from 'next/font/local';
+
 import type { Metadata } from 'next';
 
-import { routing } from '@/i18n/routing';
-import './globals.css';
-
 const pattayaFont = localFont({
-  src: './Pattaya-Regular.ttf',
+  src: '../fonts/Pattaya-Regular.ttf',
   variable: '--font-pattaya',
 });
 
