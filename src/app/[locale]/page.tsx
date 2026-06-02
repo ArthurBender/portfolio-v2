@@ -4,6 +4,7 @@ import Navbar from "./sections/navbar";
 import Introduction from "./sections/introduction";
 import Projects from "./sections/projects";
 import Skills from "./sections/skills";
+import Experiences from "./sections/experiences";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Introduction />
       <Projects />
       <Skills />
+      <Experiences />
     </div>
   );
 }
