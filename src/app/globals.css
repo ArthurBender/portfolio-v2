@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "devicon/devicon.min.css";
 
 :root {
   --background: #FAF7F2;
@@ -34,11 +35,6 @@
   --color-dark: var(--dark);
   --color-shadow: var(--shadow);
 }
-
-/* @font-face {
-  font-family: "Pattaya";
-  src: local("Pattaya"), url(./fonts/Pattaya-Regular.ttf) format("truetype");
-} */
 
 html {
   scroll-behavior: smooth;

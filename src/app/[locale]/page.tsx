@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify"
 import Navbar from "./sections/navbar";
 import Introduction from "./sections/introduction";
 import Projects from "./sections/projects";
+import Skills from "./sections/skills";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Introduction />
       <Projects />
+      <Skills />
     </div>
   );
 }
