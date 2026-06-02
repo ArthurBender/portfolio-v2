@@ -2,6 +2,7 @@ import { ToastContainer } from "react-toastify"
 
 import Navbar from "./sections/navbar";
 import Introduction from "./sections/introduction";
+import Projects from "./sections/projects";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       
       <Navbar />
       <Introduction />
+      <Projects />
     </div>
   );
 }
