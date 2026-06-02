@@ -1,8 +1,8 @@
 import type { Experience } from "../types";
 
-import dbaImg from "../assets/experiences/dba.jpeg";
-import ifscImg from "../assets/experiences/ifsc.png";
-import fetchlyImg from "../assets/experiences/fetchly.png";
+const dbaImg = "/images/experiences/dba.jpeg";
+const ifscImg = "/images/experiences/ifsc.png";
+const fetchlyImg = "/images/experiences/fetchly.png";
 
 export const experiences: Experience[] = [
   {

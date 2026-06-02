@@ -9,6 +9,6 @@ The application supports **internationalization (i18n)**, **light/dark theming**
 - **Node.js**: 20.x  
 - **React**: 18.x  
 - **TypeScript**: 5.x  
-- **Vite**: 5.x  
+- **Vite**: 16.x  
 - **Tailwind CSS**: 3.x  
 - **react-i18next**: 13.x  

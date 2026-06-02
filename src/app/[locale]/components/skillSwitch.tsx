@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
 import type { JSX } from "react";
-import type { SwitchType } from "../types";
+import type { SwitchType } from "../../../types";
 
 import { AiOutlineRadarChart } from "react-icons/ai";
 import { FaCircleNotch } from "react-icons/fa";
@@ -19,7 +19,7 @@ const iconMapping: Record<string, JSX.Element> = {
 }
 
 const SkillSwitch = ({ switchData, value, setValue, vertical }: SkillSwitchProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const formatLabel = (option: { value: string; label: string; labelType: "key" | "icon" }) => {
     if (option.labelType === "key") {

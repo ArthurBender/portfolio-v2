@@ -1,7 +1,7 @@
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <footer className="bg-surface text-text text-sm">

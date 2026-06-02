@@ -1,5 +1,7 @@
+'use client';
+
 import { useRef, useState, type JSX } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
 import { SiGmail } from "react-icons/si";
 import { FaLinkedinIn } from "react-icons/fa";
@@ -8,10 +10,10 @@ import { FaGithub } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import ReCAPTCHA from "react-google-recaptcha";
 
-import SectionTitle from "../components/SectionTitle";
+import SectionTitle from "../components/sectionTitle";
 
 import { toast } from 'react-toastify';
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "next-themes";
 
 interface ContactLink {
   id: number;
@@ -22,7 +24,7 @@ interface ContactLink {
 }
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const { theme } = useTheme();
 
@@ -36,11 +38,12 @@ const Contact = () => {
   ];
 
   const fieldClasses = "w-full p-2 bg-white rounded-lg text-black";
-  const emailJsPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const emailJsPublicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "";
+  const recaptchaSiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
   const [captchaSuccess, setCaptchaSuccess] = useState(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!formRef.current || !recaptchaRef.current) return;
@@ -49,22 +52,30 @@ const Contact = () => {
       return;
     }
 
-    emailjs.sendForm(
-      "service_7zyen6g",
-      "template_h1s51ms",
-      formRef.current!,
-      emailJsPublicKey
-    );
+    try {
+      await emailjs.sendForm(
+        "service_7zyen6g",
+        "template_h1s51ms",
+        formRef.current,
+        emailJsPublicKey
+      );
 
-    toast.success('Email sent successfully!', {
-      position: "top-center",
-      autoClose: 5000,
-      theme: theme,
-    });
+      toast.success('Email sent successfully!', {
+        position: "top-center",
+        autoClose: 5000,
+        theme: theme,
+      });
 
-    formRef.current.reset();
-    recaptchaRef.current.reset();
-    setCaptchaSuccess(false);
+      formRef.current.reset();
+      recaptchaRef.current.reset();
+      setCaptchaSuccess(false);
+    } catch {
+      toast.error('Failed to send email. Please try again.', {
+        position: "top-center",
+        autoClose: 5000,
+        theme: theme,
+      });
+    }
   }
 
   const handleCaptchaChange = (token: string | null) => {
@@ -118,7 +129,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="subject">* {t("contact.form.message")}</label>
+              <label htmlFor="message">* {t("contact.form.message")}</label>
               <textarea rows={4} id="message" name="message" className={fieldClasses} required />
             </div>
 
@@ -126,7 +137,7 @@ const Contact = () => {
               <div className="scale-[0.95] sm:scale-100 origin-top">
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                  sitekey={recaptchaSiteKey}
                   onChange={handleCaptchaChange}
                   onExpired={() => setCaptchaSuccess(false)}
                 />

@@ -1,12 +1,19 @@
+'use client';
+
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import type { Skill } from "../types";
+import type { Skill } from "../../../types";
 
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
-const AngleTick = ({ payload, x, y }: any) => {
-  const { t } = useTranslation();
+type AngleTickProps = { payload: { value: string }; x: string | number; y: string | number };
 
-  const fontSize = Math.max(10, Math.min(16, screen.width / 30));
+const AngleTick = ({ payload, x, y }: AngleTickProps) => {
+  const t = useTranslations();
+
+  let fontSize = 16;
+  try {
+    if (window) fontSize = Math.max(10, Math.min(16, window.innerWidth / 30));
+  } catch {}
 
   return (
     <text
@@ -24,7 +31,7 @@ const AngleTick = ({ payload, x, y }: any) => {
 
 const GraphSkillsView = ({ content }: { content: Skill[] }) => {
   return (
-    <ResponsiveContainer width="100%" maxHeight={400} minHeight={240} style={{ pointerEvents: 'none' }} aspect={1}>
+    <ResponsiveContainer width="100%" height={400} minHeight={240} style={{ pointerEvents: 'none' }}>
       <RadarChart
         outerRadius="85%"
         data={content}
@@ -36,7 +43,7 @@ const GraphSkillsView = ({ content }: { content: Skill[] }) => {
         }}
       >
         <PolarGrid/>
-        <PolarAngleAxis dataKey="nameKey" tick={<AngleTick />}/>
+        <PolarAngleAxis dataKey="nameKey" tick={(props: AngleTickProps) => <AngleTick {...props} />}/>
 
         <PolarRadiusAxis
           domain={[0, 10]}

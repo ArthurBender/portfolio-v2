@@ -1,15 +1,17 @@
+'use client';
+
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
 import { motion, LayoutGroup } from "framer-motion";
 
-import ProjectCard from "../components/ProjectCard";
-import SectionTitle from "../components/SectionTitle";
+import ProjectCard from "../components/projectCard";
+import SectionTitle from "../components/sectionTitle";
 
-import { projects } from "../data/projects";
+import { projects } from "../../../data/projects";
 
 const Projects = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const [active, setActive] = useState<number | null>(null);
 

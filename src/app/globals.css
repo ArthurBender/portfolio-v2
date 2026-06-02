@@ -1,7 +1,15 @@
 @import "tailwindcss";
 @import "devicon/devicon.min.css";
 
-@import "react-tooltip/dist/react-tooltip.css";
+/* For Theme switching transitions */
+@property --background { syntax: '<color>'; inherits: true; initial-value: #FAF7F2; }
+@property --surface    { syntax: '<color>'; inherits: true; initial-value: #F1ECE4; }
+@property --primary    { syntax: '<color>'; inherits: true; initial-value: #004fde; }
+@property --accent     { syntax: '<color>'; inherits: true; initial-value: #00a2f6; }
+@property --text       { syntax: '<color>'; inherits: true; initial-value: #2f251e; }
+@property --light      { syntax: '<color>'; inherits: true; initial-value: #fff7ed; }
+@property --dark       { syntax: '<color>'; inherits: true; initial-value: #2a1f18; }
+@property --shadow     { syntax: '<color>'; inherits: true; initial-value: #b7a288; }
 
 :root {
   --background: #FAF7F2;
@@ -26,6 +34,8 @@
 }
 
 @theme {
+  --font-pattaya: var(--font-pattaya);
+
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-primary: var(--primary);
@@ -36,13 +46,17 @@
   --color-shadow: var(--shadow);
 }
 
-@font-face {
-  font-family: "Pattaya";
-  src: local("Pattaya"), url(./fonts/Pattaya-Regular.ttf) format("truetype");
-}
-
 html {
   scroll-behavior: smooth;
+  transition:
+    --background 200ms ease,
+    --surface 200ms ease,
+    --primary 200ms ease,
+    --accent 200ms ease,
+    --text 200ms ease,
+    --light 200ms ease,
+    --dark 200ms ease,
+    --shadow 200ms ease;
 }
 
 .section {
@@ -73,9 +87,6 @@ html {
   --rt-arrow-size: 0px !important;
 }
 
-body * {
-  @apply transition-colors duration-200;
-}
 
 .text-neon-light {
   text-shadow: 0 0 2px var(--color-light), 0 0 6px var(--color-light), 0 0 12px var(--color-light), 0 0 24px var(--color-light);

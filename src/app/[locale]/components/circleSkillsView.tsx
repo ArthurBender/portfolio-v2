@@ -1,7 +1,9 @@
-import type { Skill } from "../types";
-import CircleProgress from "./CircleProgress";
+"use client";
 
-import { useTranslation } from "react-i18next";
+import type { Skill } from "../../../types";
+import CircleProgress from "./circleProgress";
+
+import { useTranslations } from 'next-intl';
 
 const levelColorMap: Record<number, string> = {
   1: "#ef4444", // red
@@ -20,9 +22,12 @@ const levelColorMap: Record<number, string> = {
 };
 
 const CircleSkillsView = ({ content }: { content: Skill[] }) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
-  const iconSize = screen.width < 768 ? 50 : 90;
+  let iconSize = 90;
+  try {
+    if (window) iconSize = window.innerWidth < 768 ? 50 : 90;
+  } catch {}
 
   return (
     <div className="flex flex-wrap gap-4 justify-center py-10">

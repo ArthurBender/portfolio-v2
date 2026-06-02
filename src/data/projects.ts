@@ -1,8 +1,4 @@
 import type { Project } from "../types";
-import sofiaImg from "../assets/projects/sofia.avif";
-import gaImg from "../assets/projects/genetic_algorithm.avif";
-import menimiImg from "../assets/projects/menimi.avif";
-import devdleImg from "../assets/projects/devdle.avif";
 
 export const projects: Project[] = [
   {
@@ -11,7 +7,7 @@ export const projects: Project[] = [
     link: "https://psi.sofiavarvakis.com",
     repository: "https://github.com/ArthurBender/sofia-varvakis",
     descriptionKey: "projects.descriptions.sofia",
-    image: sofiaImg,
+    image: "/images/projects/sofia.avif",
     tags: ["react", "tailwindcss"]
   },
   {
@@ -20,7 +16,7 @@ export const projects: Project[] = [
     link: "https://ga.arthur-bender.com",
     repository: "https://github.com/ArthurBender/genetic-algorithm",
     descriptionKey: "projects.descriptions.ga",
-    image: gaImg,
+    image: "/images/projects/genetic_algorithm.avif",
     tags: ["rails", "javascript", "ai"]
   },
   {
@@ -29,7 +25,7 @@ export const projects: Project[] = [
     link: "https://menimi.arthur-bender.com",
     repository: "https://github.com/ArthurBender/menimi-frontend",
     descriptionKey: "projects.descriptions.menimi",
-    image: menimiImg,
+    image: "/images/projects/menimi.avif",
     tags: ["rails", "react", "tailwindcss", "typescript", "javascript", "ai"]
   },
   {
@@ -38,7 +34,7 @@ export const projects: Project[] = [
     link: "https://devdle.arthur-bender.com",
     repository: "https://github.com/ArthurBender/devdle-frontend",
     descriptionKey: "projects.descriptions.devdle",
-    image: devdleImg,
+    image: "/images/projects/devdle.avif",
     tags: ["node", "express", "react", "tailwindcss", "typescript", "javascript", "ai"]
   },
 ];

@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
 # ================================================================================
 # File: env.sh
-# Description: Replaces environment variables in asset files.
-# Usage: Run this script in your terminal, ensuring APP_PREFIX and ASSET_DIRS are set.
+# Description: Replaces environment variable placeholders in built asset files.
+# Usage: Ensure APP_PREFIX and ASSET_DIR are set before running.
+#   APP_PREFIX  - prefix of the runtime env vars to inject (e.g. PREFIX_)
+#   ASSET_DIR   - path to the built assets directory (e.g. .next/static)
 # ================================================================================
 
 # Set the exit flag to exit immediately if any command fails
@@ -16,9 +18,8 @@ set -e
 
 # Check if the directory exists
 if [ ! -d "$ASSET_DIR" ]; then
-    # If not, display a warning message and skip to the next iteration
-    echo "Warning: directory '$ASSET_DIR' not found, skipping."
-    continue
+    echo "Error: directory '$ASSET_DIR' not found."
+    exit 1
 fi
 
 # Display the current directory being scanned

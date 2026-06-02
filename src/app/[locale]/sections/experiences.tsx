@@ -1,17 +1,19 @@
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
+'use client';
 
-import type { Experience } from "../types";
-import { experiences } from "../data/experiences";
+import { useState } from "react";
+import { useTranslations } from 'next-intl';
+
+import type { Experience } from "../../../types";
+import { experiences } from "../../../data/experiences";
 
 import { FaCircle, FaRegCircle } from "react-icons/fa";
 import { Tooltip } from 'react-tooltip';
 
-import ExperienceTooltipContent from "../components/ExperienceTooltipContent";
-import SectionTitle from "../components/SectionTitle";
+import ExperienceTooltipContent from "../components/experienceTooltipContent";
+import SectionTitle from "../components/sectionTitle";
 
 const Experiences = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const [activeExperience, setActiveExperience] = useState<Experience | null>(null);
 

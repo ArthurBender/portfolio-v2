@@ -3,32 +3,28 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Install dependencies first (better caching)
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 
-# Copy source
 COPY . .
-
-# Build the app
 RUN npm run build
 
 # ---------- Runtime stage ----------
-FROM nginx:alpine
+FROM node:20-alpine AS runner
 
-# Remove default nginx content
-RUN rm -rf /usr/share/nginx/html/*
+WORKDIR /app
 
-# Copy Vite build output
-COPY --from=build /app/dist /usr/share/nginx/html
+ENV NODE_ENV=production
+ENV APP_PREFIX=PREFIX_
+ENV ASSET_DIR=.next/static
 
-# Copy the runtime injection script into the container
-COPY env.sh /docker-entrypoint.d/env.sh
-RUN dos2unix /docker-entrypoint.d/env.sh
-RUN chmod +x /docker-entrypoint.d/env.sh
+COPY --from=build /app/.next/standalone ./
+COPY --from=build /app/.next/static ./.next/static
+COPY --from=build /app/public ./public
 
-# Expose HTTP port
-EXPOSE 80
+COPY env.sh ./env.sh
+RUN chmod +x ./env.sh
 
-# Run nginx
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 3000
+
+CMD ["sh", "-c", "./env.sh && node server.js"]

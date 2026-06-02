@@ -1,15 +1,17 @@
+'use client';
+
 import { useState } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslations } from 'next-intl';
 
-import SkillSwitch from "../components/SkillSwitch";
-import CircleSkillsView from "../components/CircleSkillsView";
-import GraphSkillsView from "../components/GraphSkillsView";
-import SectionTitle from "../components/SectionTitle";
+import SkillSwitch from "../components/skillSwitch";
+import CircleSkillsView from "../components/circleSkillsView";
+import GraphSkillsView from "../components/graphSkillsView";
+import SectionTitle from "../components/sectionTitle";
 
-import { skills, switches } from "../data/skills";
+import { skills, switches } from "../../../data/skills";
 
 const Skills = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const [skillSwitchValue, setSkillSwitchValue] = useState("hard")
   const [graphSwitchValue, setGraphSwitchValue] = useState("circles")

@@ -1,7 +1,9 @@
-import { useTranslation } from 'react-i18next';
+import { useTranslations } from 'next-intl';
 
-import type { Project } from "../types";
-import toBeAddedImg from "../assets/projects/to_be_added.avif";
+import Image from "next/image";
+
+import type { Project } from "../../../types";
+const toBeAddedImg = "/images/projects/to_be_added.avif"
 
 import { FaArrowPointer } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
@@ -13,7 +15,7 @@ interface ProjectCardProps {
 }
 
 const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   const handleClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -21,7 +23,7 @@ const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
 
   return (
     <div className={`w-full relative hover:opacity-90 ${isActive ? "h-[50vw] max-h-200" : isThumbnail ? "h-[20vw] max-h-80" : "h-[30vw] max-h-100"}`}>
-      <img src={project.image || toBeAddedImg} alt={t(project.nameKey)} className="absolute h-full w-full inset-0 object-cover rounded-xl" loading="lazy" />
+      <Image src={project.image || toBeAddedImg} alt={t(project.nameKey)} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover rounded-xl" loading="lazy" />
 
       {isActive &&
         <div className="absolute left-0 right-0 bottom-0 bg-dark/70 z-10 rounded-b-xl max-h-[80%] overflow-y-auto">

@@ -1,15 +1,15 @@
-import { useTranslation } from "react-i18next";
+import Image from "next/image";
 
-import programmingImg from "../assets/programming.avif"
+import { useTranslations } from 'next-intl';
 
 import { RiFileDownloadLine } from "react-icons/ri";
 
 const Introduction = () => {
-  const { t } = useTranslation();
+  const t = useTranslations();
 
   return (
     <div className="relative pt-20 pb-30 -mb-12">
-      <img src={programmingImg} alt="Programming" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      <Image src="/images/programming.avif" alt="Programming" fill sizes="100vw" className="object-cover" loading="eager" />
       <div className="absolute inset-0 bg-linear-to-r from-dark via-dark via-20% to-transparent"></div>
       <div className="absolute top-0 left-0 right-0 h-14 bg-background"></div>
 
