@@ -35,7 +35,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning className={pattayaFont.variable} data-scroll-behavior="smooth">
-      <body>
+      <body suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div id="root">

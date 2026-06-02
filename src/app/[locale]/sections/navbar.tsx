@@ -32,6 +32,10 @@ const Navbar = () => {
     router.replace(pathname, { locale: locale === 'en' ? 'pt-BR' : 'en' });
   };
 
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
     <nav className="w-full bg-background/70 text-primary px-4 py-2 shadow-lg shadow-shadow/60 z-20 fixed backdrop-blur">
       <div className="flex items-center justify-between">
@@ -71,9 +75,9 @@ const Navbar = () => {
 
           <div className="flex gap-4 text-2xl items-center px-4 pb-4 md:p-0 nav-actions justify-end">
             <span className="cursor-pointer" onClick={toggleLanguage}>
-              <Image src={flag} alt="Language flag" height={0} width={0} className="h-6" style={{ width: "auto" }} />
+              <Image src={flag} alt="Language flag" width={32} height={32} unoptimized className="h-8 w-8" />
             </span>
-            <span className="cursor-pointer text-2xl" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+            <span className="cursor-pointer text-2xl" onClick={toggleTheme}>
               {themeIcon}
             </span>
           </div>

@@ -23,7 +23,7 @@ const ProjectCard = ({project, isActive, isThumbnail}: ProjectCardProps) => {
 
   return (
     <div className={`w-full relative hover:opacity-90 ${isActive ? "h-[50vw] max-h-200" : isThumbnail ? "h-[20vw] max-h-80" : "h-[30vw] max-h-100"}`}>
-      <Image src={project.image || toBeAddedImg} alt={t(project.nameKey)} width={0} height={0} className="absolute h-full w-full inset-0 object-cover rounded-xl" loading="lazy" />
+      <Image src={project.image || toBeAddedImg} alt={t(project.nameKey)} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover rounded-xl" loading="lazy" />
 
       {isActive &&
         <div className="absolute left-0 right-0 bottom-0 bg-dark/70 z-10 rounded-b-xl max-h-[80%] overflow-y-auto">
