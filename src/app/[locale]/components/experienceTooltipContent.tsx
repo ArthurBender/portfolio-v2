@@ -11,7 +11,7 @@ const ExperienceTooltipContent = ({ experience }: { experience: Experience | nul
     <>
       {experience && <div className="flex flex-col gap-4 border border-text text-text p-4 rounded-xl bg-surface max-w-[90vw] lg:max-w-150">
         <div className="flex gap-4">
-          <Image src={experience.image} alt={experience.company} width={0} height={0} className="h-12" />
+          <Image src={experience.image} alt={experience.company} width={0} height={0} className="h-12 w-auto" />
           
           <div className="flex flex-col">
             <span className="text-lg"><b>{experience.company}</b> - {t(experience.positionKey)}</span>

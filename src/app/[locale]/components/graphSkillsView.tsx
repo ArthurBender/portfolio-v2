@@ -6,7 +6,10 @@ import { useTranslations } from 'next-intl';
 const AngleTick = ({ payload, x, y }: any) => {
   const t = useTranslations();
 
-  const fontSize = Math.max(10, Math.min(16, screen.width / 30));
+  let fontSize = 16;
+  try {
+    if (window) fontSize = Math.max(10, Math.min(16, window.innerWidth / 30));
+  } catch {}
 
   return (
     <text
@@ -24,7 +27,7 @@ const AngleTick = ({ payload, x, y }: any) => {
 
 const GraphSkillsView = ({ content }: { content: Skill[] }) => {
   return (
-    <ResponsiveContainer width="100%" maxHeight={400} minHeight={240} style={{ pointerEvents: 'none' }} aspect={1}>
+    <ResponsiveContainer width="100%" height={400} minHeight={240} style={{ pointerEvents: 'none' }}>
       <RadarChart
         outerRadius="85%"
         data={content}
