@@ -6,6 +6,7 @@ import Projects from "./sections/projects";
 import Skills from "./sections/skills";
 import Experiences from "./sections/experiences";
 import Contact from "./sections/contact";
+import Footer from "./sections/footer";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <Skills />
       <Experiences />
       <Contact />
+      <Footer />
     </div>
   );
 }
