@@ -23,6 +23,8 @@
 }
 
 @theme {
+  --font-pattaya: var(--font-pattaya);
+
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-primary: var(--primary);

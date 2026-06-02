@@ -1,7 +1,13 @@
 import { ThemeProvider } from "next-themes";
+import localFont from "next/font/local";
 
 import type { Metadata } from "next";
 import "./globals.css";
+
+const pattayaFont = localFont({
+  src: './Pattaya-Regular.ttf',
+  variable: '--font-pattaya',
+})
 
 export const metadata: Metadata = {
   title: "Arthur Bender - Portfolio",
@@ -15,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={pattayaFont.variable}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div id="root">
